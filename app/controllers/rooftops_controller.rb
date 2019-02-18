@@ -1,6 +1,11 @@
 class RooftopsController < ApplicationController
+  
   skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :set_rooftop, only: [:show, :edit, :update, :destroy]
+  
+  def index
+    @rooftops = Rooftop.all
+  end
   
   def show
     @rooftop = Rooftop.find(params[:id])
@@ -28,4 +33,5 @@ class RooftopsController < ApplicationController
   def rooftop_params
     params.require(:rooftop).permit(:name, :address, :price_per_hour, :photo)
   end
+
 end
