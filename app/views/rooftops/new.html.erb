@@ -6,8 +6,8 @@
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :price_per_hour %>
-    <%#= f.input :photo, input_html: { class: 'btn-input ml-2' } %>
-    <%#= f.input :photo_cache, as: :hidden %>
+    <%= f.input :photo, input_html: { class: 'btn-input ml-2' } %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%=  f.submit class: 'btn btn-primary'%>
     <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>  <% end %>
   <hr>

@@ -26,6 +26,6 @@ class RooftopsController < ApplicationController
   end
 
   def rooftop_params
-    params.require(:rooftop).permit(:name, :address, :price_per_hour)
+    params.require(:rooftop).permit(:name, :address, :price_per_hour, :photo)
   end
 end
