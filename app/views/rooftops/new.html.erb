@@ -5,6 +5,7 @@
   <%= simple_form_for(@rooftop) do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
+    <%= f.input :description %>
     <%= f.input :price_per_hour %>
     <%= f.input :photo, input_html: { class: 'btn-input ml-2' } %>
     <%= f.input :photo_cache, as: :hidden %>
