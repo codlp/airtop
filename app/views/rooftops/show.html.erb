@@ -1,14 +1,13 @@
-<div class="container text-center">
-  <h2><%= @rooftop.name %></h2>
+<div class="container">
+<br>
+<% if @rooftop.photo.present? %>
+  <%= cl_image_tag @rooftop.photo, height: 300, width: 400, crop: :fill %>
+<% end %>
+<h2><%= @rooftop.name %></h2>
+<ul>
+    <li><%= @rooftop.address %></li>
+    <li><%= @rooftop.description %></li>
+    <li>Price per hour: <%= @rooftop.price_per_hour %></li>
+</ul>
 
-    <ul>
-      <% @rooftops.each do | rooftop | %>
-        <li><%= rooftop.address %></li>
-        <li><%= rooftop.description %></li>
-        <li><%= rooftop.price_per_hour %></li>
-      <% end %>
-    </ul>
-
-<!--   <p><%#= link_to "Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %></p>
-  <p><%#= link_to "Back to list", restaurants_path, class:"btn btn-success" %></p> -->
 </div>
