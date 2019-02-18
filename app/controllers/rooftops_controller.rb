@@ -1,3 +1,2 @@
 class RooftopsController < ApplicationController
 end
-
