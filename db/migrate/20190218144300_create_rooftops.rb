@@ -5,8 +5,7 @@ class CreateRooftops < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :address
       t.text :description
-      t.decimal12 :price_per_hour
-      t.decimal2 :price_per_hour
+      t.decimal :price_per_hour, precision: 10, scale: 2
 
       t.timestamps
     end

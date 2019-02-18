@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_142249) do
+ActiveRecord::Schema.define(version: 2019_02_18_144514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "rooftop_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rooftop_id"], name: "index_reservations_on_rooftop_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "rooftops", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.string "address"
+    t.text "description"
+    t.decimal "price_per_hour", precision: 10, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_rooftops_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +50,7 @@ ActiveRecord::Schema.define(version: 2019_02_18_142249) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reservations", "rooftops"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "rooftops", "users"
 end
