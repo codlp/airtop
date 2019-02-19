@@ -9,5 +9,7 @@
     <li>Description: <%= @rooftop.description %></li>
     <li>Price per hour: <%= @rooftop.price_per_hour %></li>
 </ul>
-
+  <% if policy(rooftop).edit? %>
+    <%= link_to "Update", edit_rooftop_path(rooftop) %>
+  <% end %>
 </div>
