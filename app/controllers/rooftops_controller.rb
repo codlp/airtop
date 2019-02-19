@@ -19,7 +19,6 @@ class RooftopsController < ApplicationController
   def create
     @rooftop = Rooftop.new(rooftop_params)
     authorize @rooftop
-    @rooftop.user_id = current_user.id
     if @rooftop.save
       redirect_to rooftop_path(@rooftop)
     else
@@ -31,8 +30,12 @@ class RooftopsController < ApplicationController
   end
 
   def update
-    @rooftop.update_attributes(rooftop_params)
+    @rooftop = Rooftop.find(params[:id])
+    if @rooftop.update_attributes(rooftop_params)
     redirect_to rooftop_path(@rooftop)
+    else
+      render 'edit'
+    end
   end
 
   def destroy

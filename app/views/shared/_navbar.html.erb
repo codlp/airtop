@@ -11,7 +11,7 @@
 
       <!-- Links when logged in -->
       <%= link_to "My reservations", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My rooftops", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My rooftops", user_rooftops_path(@user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
