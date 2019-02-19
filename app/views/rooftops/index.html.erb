@@ -3,30 +3,35 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1493246318656-5bfd4cfb29b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);">
   <div class="container text-center">
     <h1>Amazing rooftops for memorable events</h1>
-<!--     <p>Best rooftops all around the world</p> -->
   </div>
 </div>
 
 <!-- End of banner -->
 
+<br>
 <div class="container">
   <h1 class="text-center presentation-line">Our amazing rooftops</h1>
-</div>
 
-<div class="container">
   <div class="row">
-    <% 9.times do %>
-
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card-trip">
-          <img class="roof-img" src="https://images.unsplash.com/photo-1493246318656-5bfd4cfb29b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80">
-          <div class="card-trip-infos">
-            <h2>Rent a Roof</h2>
-          <h2 class="card-trip-pricing">£99.99</h2>
+    <% @rooftops.each do |rooftop| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card-trip">
+        <% if rooftop.photo.present? %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path rooftop.photo, crop: :fill %>')">
+          <% else %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "photo-1493246318656-5bfd4cfb29b8_1", crop: :fill %>')">
+            <% end %>
+            <div class="card-bottom">
+              <h2><%= rooftop.name %></h2>
+              <h5 class="card-trip-pricing"><%= link_to " See it ", rooftop_path(rooftop), class: "btn medium-btn", style: "background-color: #2281D0"%> <div class="link">Price: <%= rooftop.price_per_hour %> € </div></h5>
+              <img src='https://d1qb2nb5cznatu.cloudfront.net/users/3459455-large?1516069194' class="card-trip-user avatar-bordered"/>
+            </div>
           </div>
-          <img src='https://d1qb2nb5cznatu.cloudfront.net/users/3459455-large?1516069194' class="card-trip-user avatar-bordered"/>
+
         </div>
       </div>
     <% end %>
+    </div>
   </div>
 </div>
+
