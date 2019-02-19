@@ -13,10 +13,12 @@ class RooftopsController < ApplicationController
 
   def new
     @rooftop = Rooftop.new
+    authorize @rooftop
   end
 
   def create
     @rooftop = Rooftop.new(rooftop_params)
+    authorize @rooftop
     @rooftop.user_id = current_user.id
     if @rooftop.save
       redirect_to rooftop_path(@rooftop)
