@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: "rooftops#index"
   resources :rooftops
   resources :reservations
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+get '/myrooftops' => 'users#myrooftops', :as => :user_rooftops
 end
