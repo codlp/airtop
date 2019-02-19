@@ -7,15 +7,25 @@
 }
 
 .card-trip .roof-img {
-  height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
+  height: 200px;
+  padding: 20px;
+}
+.card-trip h5 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  background-color: white;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
 }
 
 .card-trip p {
@@ -24,6 +34,13 @@
   margin: 0;
 }
 
+.card-bottom {
+  justify-content: flex-start;
+}
+
+.card-bottom #text {
+  padding: 20px;
+}
 
 .card-trip .card-trip-infos {
   padding: 16px;
@@ -38,5 +55,5 @@
   right: 16px;
   top: -15px;
   width: 40px;
+  bottom: 50px;
 }
-
