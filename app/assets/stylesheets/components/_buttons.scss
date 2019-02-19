@@ -78,3 +78,23 @@ a.big-btn:hover{
   background-color: #6359b2;
   border-color:#FFFFFF;
 }
+
+.btn-flat{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin: 35px;
+
+}
+.btn-flat a{
+  color: white;
+}
+.btn-flat a:hover {
+  background: #1BCB7F;
+  color: white;
+  text-decoration: none;
+  cursor:pointer;
+}
