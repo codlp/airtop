@@ -9,15 +9,17 @@
 
       <ul>
         <li>Adress: <%= @rooftop.address %></li>
-        <li>Description: <%= @rooftop.description.capitalize %></li>
-        <li>Price per hour: <%= @rooftop.price_per_hour %>€</li>
+        <li>Description: <%= @rooftop.description %></li>
+        <li>Price per hour : <%= @rooftop.price_per_hour %>€</li>
       </ul>
       <% if policy(@rooftop).edit? %>
       <%= link_to "Update", edit_rooftop_path(@rooftop), class: "btn medium-btn", style: "background-color: #3945C3" %>
       <% end %>
 
       <% if policy(@rooftop).destroy? %>
-      <%= link_to " Delete ", rooftop_path(@rooftop),  method: :delete, data: {confirm: "Are you sure?"}, class: "btn medium-btn", style: "background-color: #b20401" %>
+        <button id="sweet-alert-demo" class="btn medium-btn"  style="background-color: #3945C3"" >Delete </button>
+        <%= link_to "Delete", rooftop_path(@rooftop), method: :delete, id: "delete-link", class: "hidden" %>
+
       <% end %>
     </div>
   </div>
