@@ -18,8 +18,6 @@ gem 'webpacker'
 gem 'bcrypt', '~> 3.1.12'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
-gem "paperclip", "~> 6.0.0"
-gem 'dropzonejs-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
