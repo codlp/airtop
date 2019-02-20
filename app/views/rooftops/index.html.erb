@@ -14,8 +14,10 @@
 
 <!-- End of banner -->
 
-<br>
+<!-- Index with all the rooftops -->
+
 <div class="container">
+  <h1 class="text-center presentation-line">Discover our amazing rooftops</h1>
   <br>
   <div id="presentation"></div>
   <h1 class="text-center presentation-line">Our amazing rooftops</h1>
@@ -38,8 +40,20 @@
 
         </div>
       </div>
-    <% end %>
+      <% end %>
+      <br>
     </div>
   </div>
 </div>
 
+<!-- MAP -->
+<div class="container">
+  <h2 class="text-center presentation-line">Locate our amazing rooftops</h2>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
