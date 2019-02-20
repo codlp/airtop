@@ -21,7 +21,7 @@ class ReservationsController < ApplicationController
     @reservation.rooftop = @rooftop
     @reservation.user = current_user
     if @reservation.save
-      redirect_to reservations_path
+      redirect_to user_reservations_path
     else
       render :new
     end
