@@ -32,7 +32,7 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-  gem 'devise'
-  gem "pundit"
-  gem "geocoder"
+gem 'devise'
+gem "pundit"
+gem 'geocoder'
 

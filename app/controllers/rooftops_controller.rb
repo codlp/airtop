@@ -12,9 +12,7 @@ class RooftopsController < ApplicationController
     @markers = @rooftops.map do |rooftop|
       {
         lng: rooftop.longitude,
-        lat: rooftop.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { rooftop: rooftop }),
-        image_url: helpers.asset_url('marker.png')
+        lat: rooftop.latitude
       }
     end
   end
