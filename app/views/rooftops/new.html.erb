@@ -1,20 +1,19 @@
 <div class="container">
-<br>
-<h1>Post a new rooftop</h1>
-<hr>
+  <div class="post">
+    <h1>Post a new rooftop</h1>
+    <%= link_to "< Back to list", rooftops_path, class: "btn medium-btn", style: "background-color: #3945C3" %>
+  </div>
+  <hr>
   <%= simple_form_for(@rooftop) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :description %>
-    <%= f.input :price_per_hour %>
-    <%= f.input :photo, input_html: { class: 'btn-input ml-2' } %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit class: 'btn btn-primary'%>
-    <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price_per_hour %>
+  <%= f.input :photo, input_html: { class: 'btn-input ml-2' } %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit class: 'btn btn-primary'%>
+  <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>
   <% end %>
-<hr>
-
-<%= link_to "< Back to list", rooftops_path %>
 <br>
 </div>
 

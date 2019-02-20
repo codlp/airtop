@@ -1,14 +1,24 @@
 class RooftopsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :set_rooftop, only: [:show, :edit, :update, :destroy]
 
   def index
     @rooftops = policy_scope(Rooftop).order(created_at: :desc)
+
+    # MAP
+    @rooftops = Rooftop.where.not(latitude: nil, longitude: nil)
+
+    @markers = @rooftops.map do |rooftop|
+      {
+        lng: rooftop.longitude,
+        lat: rooftop.latitude
+      }
+    end
   end
 
   def show
     @rooftop = Rooftop.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def new
@@ -20,7 +30,7 @@ class RooftopsController < ApplicationController
     @rooftop = Rooftop.new(rooftop_params)
     @rooftop.user = current_user
     authorize @rooftop
-
+    @rooftop.user = current_user
     if @rooftop.save
       redirect_to rooftop_path(@rooftop)
     else
@@ -53,6 +63,6 @@ class RooftopsController < ApplicationController
   end
 
   def rooftop_params
-    params.require(:rooftop).permit(:name, :address, :description, :price_per_hour, :photo)
+    params.require(:rooftop).permit(:name, :address, :description, :price_per_hour, :photo, :photo_cache)
   end
 end

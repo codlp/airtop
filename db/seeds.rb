@@ -5,5 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-perchoir = Rooftop.new(user_id: 0, name: "Perchoir", address: "14 rue crespin du gast 75011 Paris", description: "Very nice terrasse truly appreciated by Le Wagon's students", price_per_hour: "150")
-perchoir.save
+perchoir = Rooftop.create(name: "perchoir", description: "jolie vue", address: "14 rue crespin du gast, paris", user_id: 2, price_per_hour: 50)
+
+mama_shelter = Rooftop.create(name: "mama shelter", description: "jolie vue", address: "109 rue de Bagnolet 75020 Paris", user_id: 2, price_per_hour: 100)
