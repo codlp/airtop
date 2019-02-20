@@ -7,6 +7,7 @@
       <span id="banner-typed-text"></span>
     </h1>
     <button class="btn btn-flat" > <%= link_to "I WANT TO RENT MY ROOFTOP", new_rooftop_path(@rooftop) %> </button>
+    <button class="btn btn-flat-book" > <%= link_to "I WANT TO BOOK A ROOFTOP", rooftops_path(@rooftop, anchor: 'presentation' ) %> </button>
 
   </div>
 </div>
@@ -14,6 +15,9 @@
 <!-- End of banner -->
 <div class="container">
   <h1 class="text-center presentation-line">Discover our amazing rooftops</h1>
+  <br>
+  <div id="presentation"></div>
+  <h1 class="text-center presentation-line">Our amazing rooftops</h1>
   <br>
   <div class="row">
     <% @rooftops.each do |rooftop| %>
@@ -38,3 +42,14 @@
   </div>
 </div>
 
+<!-- MAP -->
+<div class="container">
+  <h2 class="text-center presentation-line">Locate our amazing rooftops</h2>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
