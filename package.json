@@ -6,7 +6,7 @@
     "bootstrap": "3.4.0",
     "flatpickr": "^4.5.2",
     "jquery": "^3.3.1",
-    "jquery-datetimepicker": "^2.5.20",
+    "punycode.js": "^2.1.0",
     "sweetalert": "^2.1.2",
     "typed.js": "^2.0.10"
   },
