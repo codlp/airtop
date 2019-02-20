@@ -5,7 +5,7 @@
     <%= cl_image_tag @rooftop.photo, height: 300, width: 400, crop: :fill %>
     <% end %>
     <div class="rooftop-presentation">
-      <h2 class="text-center"><%= @rooftop.name.upcase %></h2>
+      <h2 class="text-center"><%= @rooftop.name.capitalize %></h2>
 
    <div class="panel pricing-table">
       <div class="pricing-plan">
