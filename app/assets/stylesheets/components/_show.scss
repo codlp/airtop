@@ -1,9 +1,18 @@
 .show-container {
   display: flex;
-  height: 70vh
 }
 
 .rooftop-presentation {
   padding-left: 40px;
 }
 
+.calendar {
+  display: flex-inline;
+  background-color: white;
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+.form-wrapper {
+  display: flex-inline;
+}

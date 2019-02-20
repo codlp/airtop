@@ -1,8 +1,6 @@
-<div class="container">
-  <br>
   <div class="show-container">
     <% if @rooftop.photo.present? %>
-    <%= cl_image_tag @rooftop.photo, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @rooftop.photo, height: 450, crop: :fill %>
     <% end %>
     <div class="rooftop-presentation">
       <h2 class="text-center"><%= @rooftop.name.capitalize %></h2>
@@ -36,4 +34,14 @@
       <% end %>
     </div>
   </div>
+  <div class="calendar">
+    <div class="form-wrapper list-inline" style="width: 400px; margin: 0 auto;">
+    <h2>Book this rooftop now</h2>
+    <%= simple_form_for [@rooftop, @reservation] do |f| %>
+    <%= f.input :start_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.button :submit, "Book now", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
+
