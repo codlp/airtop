@@ -11,11 +11,38 @@
 
 <!-- End of banner -->
 
+<!-- Index with all the rooftops -->
 
+<div class="container">
+  <h1 class="text-center presentation-line">Discover our amazing rooftops</h1>
+  <br>
+  <div class="row">
+    <% @rooftops.each do |rooftop| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card-trip">
+        <% if rooftop.photo.present? %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path rooftop.photo, height: 300, crop: :fill %>')">
+          <% else %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "photo-1493246318656-5bfd4cfb29b8_1", height: 300, crop: :fill %>')">
+            <% end %>
+            <div class="card-bottom">
+              <h2><%= rooftop.name %></h2>
+              <h5 class="card-trip-pricing"><%= link_to " See it ", rooftop_path(rooftop), class: "btn medium-btn", style: "background-color: #2281D0"%> <div class="link">Price: <%= rooftop.price_per_hour %> € </div></h5>
+              <img src='https://d1qb2nb5cznatu.cloudfront.net/users/3459455-large?1516069194' class="card-trip-user avatar-bordered"/>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <% end %>
+      <br>
+    </div>
+  </div>
+</div>
 
 <!-- MAP -->
 <div class="container">
-  <h2 class="presentation-line">Locate our amazing rooftops</h2>
+  <h2 class="text-center presentation-line">Locate our amazing rooftops</h2>
   <div
     id="map"
     style="width: 100%;
