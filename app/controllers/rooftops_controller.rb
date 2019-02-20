@@ -28,7 +28,6 @@ class RooftopsController < ApplicationController
 
   def create
     @rooftop = Rooftop.new(rooftop_params)
-    @rooftop.user = current_user
     authorize @rooftop
     @rooftop.user = current_user
     if @rooftop.save

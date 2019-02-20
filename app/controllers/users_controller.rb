@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def myreservations
     skip_authorization
-    @user = current_user
+    @user = current_user©
     @rooftops = @user.rooftops
   end
 
