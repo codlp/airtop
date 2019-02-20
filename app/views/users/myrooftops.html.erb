@@ -10,7 +10,7 @@
         <% if rooftop.photo.present? %>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path rooftop.photo, height: 300, crop: :fill %>')">
           <% else %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "photo-1493246318656-5bfd4cfb29b8_1", height: 300, crop: :fill %>')">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "photo-w1493246318656-5bfd4cfb29b8_1", height: 300, crop: :fill %>')">
             <% end %>
             <div class="card-bottom">
               <h2><%= rooftop.name %></h2>
