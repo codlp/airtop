@@ -1,5 +1,3 @@
-import "../plugins/flatpickr"
-
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import { initSweetalert } from '../components/init_sweetalert';
@@ -10,7 +8,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 initMapbox();
 
-loadDynamicBannerText();
+// loadDynamicBannerText();
 
 initSweetalert('#sweet-alert-demo', {
   title: "Are you sure?",
@@ -22,3 +20,13 @@ initSweetalert('#sweet-alert-demo', {
     link.click();
   }
 });
+
+
+// initSweetalert('#sweet-alert-green', {
+//   title: "A nice alert",
+//   text: "This is a great alert, isn't it?",
+//   icon: "success"
+// }, (value) => {
+//   console.log(value);
+// });
+
