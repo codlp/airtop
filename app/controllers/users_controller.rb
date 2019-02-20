@@ -12,5 +12,4 @@ class UsersController < ApplicationController
     @user = current_user
     @rooftops = @user.rooftops
   end
-
 end
