@@ -3,19 +3,34 @@
     <%= cl_image_tag @rooftop.photo, height: 450, crop: :fill %>
     <% end %>
     <div class="rooftop-presentation">
-      <h2><%= @rooftop.name.capitalize %></h2>
+      <h2 class="text-center"><%= @rooftop.name.capitalize %></h2>
 
-      <ul>
-        <li>Adress: <%= @rooftop.address %></li>
-        <li>Description: <%= @rooftop.description %></li>
-        <li>Price per hour: <%= @rooftop.price_per_hour %>€</li>
-      </ul>
+   <div class="panel pricing-table">
+      <div class="pricing-plan">
+        <img src="https://image.flaticon.com/icons/svg/1250/1250252.svg" alt="" class="pricing-img">
+        <h2 class="pricing-header"> Description </h2>
+        <span class="pricing-price"><%= @rooftop.description %></span>
+      </div>
+
+      <div class="pricing-plan">
+        <img src="https://image.flaticon.com/icons/svg/1250/1250292.svg" alt="" class="pricing-img">
+        <h2 class="pricing-header"> Address </h2>
+        <span class="pricing-price"> <%= @rooftop.address %> </span>
+      </div>
+
+      <div class="pricing-plan">
+        <img src="https://image.flaticon.com/icons/svg/1250/1250181.svg" alt="" class="pricing-img">
+        <h2 class="pricing-header"> Price </h2>
+        <span class="pricing-price"><%= @rooftop.price_per_hour %>€</span>
+      </div>
+    </div>
       <% if policy(@rooftop).edit? %>
-      <%= link_to "Update", edit_rooftop_path(@rooftop), class: "btn medium-btn", style: "background-color: #3945C3" %>
+      <%= link_to "Update", edit_rooftop_path(@rooftop), class: "pricing-button" %>
       <% end %>
 
       <% if policy(@rooftop).destroy? %>
-      <%= link_to " Delete ", rooftop_path(@rooftop),  method: :delete, data: {confirm: "Are you sure?"}, class: "btn medium-btn", style: "background-color: #b20401" %>
+        <button id="sweet-alert-demo" class="pricing-button">Delete <%= @rooftop.name %></button>
+         <%= link_to "Delete", rooftop_path(@rooftop), method: :delete, id: "delete-link", class: "hidden" %>
       <% end %>
     </div>
   </div>
@@ -29,5 +44,4 @@
     <% end %>
   </div>
 </div>
-
 
