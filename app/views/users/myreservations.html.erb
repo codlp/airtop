@@ -1,7 +1,5 @@
-<br>
 <div class="container">
-  <br>
-  <h1 class="text-center presentation-line"> All my reservations <%= link_to "Post a new rooftop", new_rooftop_path(@rooftop), class: "btn medium-btn", style: "background-color: #3945C3" %></h1>
+  <h1 class="text-center presentation-line"> My reservations <%= link_to "Book a new rooftop", rooftops_path, class: "btn medium-btn", style: "background-color: #3945C3" %></h1>
   <hr>
   <% @user.reservations.each do |reservation| %>
   <div class="message">
