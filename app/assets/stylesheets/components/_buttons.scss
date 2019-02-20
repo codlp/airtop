@@ -87,14 +87,19 @@ a.big-btn:hover{
   transition: background 0.3s ease;
   text-decoration: none;
   margin: 35px;
+  font-weight: bold;
 
 }
-.btn-flat a{
+.btn-flat a {
   color: white;
 }
+
+.btn-flat:hover {
+  transform: scale(1.03);
+}
+
 .btn-flat a:hover {
-  background: #1BCB7F;
   color: white;
   text-decoration: none;
-  cursor:pointer;
 }
+

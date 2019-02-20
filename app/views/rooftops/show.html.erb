@@ -1,20 +1,13 @@
-
+<div class="container">
+  <br>
   <div class="show-container">
     <% if @rooftop.photo.present? %>
-    <%= cl_image_tag @rooftop.photo, height: 300, crop: :fill %>
+    <%= cl_image_tag @rooftop.photo, height: 300, width: 400, crop: :fill %>
     <% end %>
     <div class="rooftop-presentation">
-      <h2><%= @rooftop.name.capitalize %></h2>
-      <% if policy(@rooftop).edit? %>
-      <%= link_to "Update", edit_rooftop_path(@rooftop), class: "pricing-button" %>
-      <% end %>
-      <% if policy(@rooftop).destroy? %>
-        <button id="sweet-alert-demo" class="pricing-button" >Delete </button>
-        <%= link_to "Delete", rooftop_path(@rooftop) , method: :delete, id: "delete-link", class: "hidden" %>
-      <% end %>
-    </div>
-    <div class="panel pricing-table">
+      <h2 class="text-center"><%= @rooftop.name.upcase %></h2>
 
+   <div class="panel pricing-table">
       <div class="pricing-plan">
         <img src="https://image.flaticon.com/icons/svg/1250/1250252.svg" alt="" class="pricing-img">
         <h2 class="pricing-header"> Description </h2>
@@ -31,10 +24,16 @@
         <img src="https://image.flaticon.com/icons/svg/1250/1250181.svg" alt="" class="pricing-img">
         <h2 class="pricing-header"> Price </h2>
         <span class="pricing-price"><%= @rooftop.price_per_hour %>€</span>
-        <% if policy(@rooftop).edit? %>
+      </div>
+    </div>
+      <% if policy(@rooftop).edit? %>
       <%= link_to "Update", edit_rooftop_path(@rooftop), class: "pricing-button" %>
       <% end %>
-      </div>
+
+      <% if policy(@rooftop).destroy? %>
+        <button id="sweet-alert-demo" class="pricing-button">Delete <%= @rooftop.name %></button>
+         <%= link_to "Delete", rooftop_path(@rooftop), method: :delete, id: "delete-link", class: "hidden" %>
+      <% end %>
     </div>
   </div>
 </div>
