@@ -10,9 +10,13 @@
   justify-content: space-between;
 }
 
+#logo-name {
+  padding: 10px;
+}
+
 /* Logo */
 .navbar-wagon-brand img {
-  height: 50px;
+  height: 35px;
 }
 
 /* User Avatar */
@@ -41,7 +45,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #1e67bd;
   text-decoration: none;
 }
 
@@ -54,7 +58,7 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: #777777 !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -74,4 +78,8 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.fa-user:hover {
+  color: #1e67bd;
 }

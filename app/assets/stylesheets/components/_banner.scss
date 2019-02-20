@@ -1,42 +1,49 @@
-.home-banner {
-  color: white;
-  text-align: center;
-  height: 92vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.home-banner h1 {
-  font-size: 50px;
-  font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-}
-.home-banner p {
-  font-size: 25px;
-  font-weight: lighter;
-  color: rgb(255, 255, 255);
-  opacity: 0.6;
-  margin-bottom: 30px;
-}
-
 .banner {
-  text-align: center;
-  background-size: cover !important;
-  height: 50%;
+  background-size: cover;
   background-position: center;
+  padding: 200px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner h1 {
+  font-size: 38px;
+}
+
+.banner p {
+  font-size: 23px;
+  padding-top: 9px;
+}
+
+.presentation-line {
+  font-size: 25px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.banner-text {
-  text-align: center;
-  color: white;
+#banner-typed-text {
+  color: wheat;
+  font-size: 60px;
+
 }
 
-h5 {
-  font-weight: bold;
+#banner-text {
+font-weight: lighter;
+font-size: 70px;
+padding-bottom: 20px;
+letter-spacing: 3px;
 }
