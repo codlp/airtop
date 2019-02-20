@@ -6,8 +6,11 @@
   height: 100px;
   padding: 0px 50px;
   color: #777777;
-  bottom: 0;
   width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .footer-links {
