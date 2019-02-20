@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_144427) do
     t.string "name"
     t.string "address"
     t.text "description"
-    t.decimal "price_per_hour", precision: 10, scale: 2
+    t.integer "price_per_hour"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"

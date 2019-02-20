@@ -1,1 +1,46 @@
-"show.html.erb"
+<div class="show-container">
+  <% if @rooftop.photo.present? %>
+  <%= cl_image_tag @rooftop.photo, height: 450, crop: :fill %>
+  <% end %>
+  <div class="rooftop-presentation">
+    <h2 class="text-center"><%= @rooftop.name.capitalize %></h2>
+
+ <div class="panel pricing-table">
+    <div class="pricing-plan">
+      <img src="https://image.flaticon.com/icons/svg/1250/1250252.svg" alt="" class="pricing-img">
+      <h2 class="pricing-header"> Description </h2>
+      <span class="pricing-price"><%= @rooftop.description %></span>
+    </div>
+
+    <div class="pricing-plan">
+      <img src="https://image.flaticon.com/icons/svg/1250/1250292.svg" alt="" class="pricing-img">
+      <h2 class="pricing-header"> Address </h2>
+      <span class="pricing-price"> <%= @rooftop.address %> </span>
+    </div>
+
+    <div class="pricing-plan">
+      <img src="https://image.flaticon.com/icons/svg/1250/1250181.svg" alt="" class="pricing-img">
+      <h2 class="pricing-header"> Price </h2>
+      <span class="pricing-price"><%= @rooftop.price_per_hour %>€</span>
+    </div>
+  </div>
+    <% if policy(@rooftop).edit? %>
+    <%= link_to "Update", edit_rooftop_path(@rooftop), class: "pricing-button" %>
+    <% end %>
+
+    <% if policy(@rooftop).destroy? %>
+      <button id="sweet-alert-demo" class="pricing-button">Delete <%= @rooftop.name %></button>
+       <%= link_to "Delete", rooftop_path(@rooftop), method: :delete, id: "delete-link", class: "hidden" %>
+    <% end %>
+  </div>
+</div>
+<div class="calendar">
+  <div class="form-wrapper list-inline" style="width: 400px; margin: 0 auto;">
+  <h2>Book this rooftop now</h2>
+  <%= simple_form_for [@rooftop, @reservation] do |f| %>
+  <%= f.input :start_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.button :submit, "Book now", class: "btn btn-primary" %>
+  <% end %>
+</div>
+</div>
