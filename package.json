@@ -4,12 +4,13 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3.4.0",
+    "flatpickr": "^4.5.2",
     "jquery": "^3.3.1",
     "punycode.js": "^2.1.0",
     "sweetalert": "^2.1.2",
     "typed.js": "^2.0.10"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": ">=3.1.11"
   }
 }

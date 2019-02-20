@@ -1,5 +1,4 @@
 class RooftopsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :set_rooftop, only: [:show, :edit, :update, :destroy]
 
@@ -9,6 +8,7 @@ class RooftopsController < ApplicationController
 
   def show
     @rooftop = Rooftop.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def new
@@ -19,7 +19,7 @@ class RooftopsController < ApplicationController
   def create
     @rooftop = Rooftop.new(rooftop_params)
     authorize @rooftop
-    @rooftop.user_id = current_user.id
+    @rooftop.user = current_user
     if @rooftop.save
       redirect_to rooftop_path(@rooftop)
     else
@@ -31,8 +31,12 @@ class RooftopsController < ApplicationController
   end
 
   def update
-    @rooftop.update_attributes(rooftop_params)
+    @rooftop = Rooftop.find(params[:id])
+    if @rooftop.update_attributes(rooftop_params)
     redirect_to rooftop_path(@rooftop)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -48,6 +52,6 @@ class RooftopsController < ApplicationController
   end
 
   def rooftop_params
-    params.require(:rooftop).permit(:name, :address, :description, :price_per_hour, :photo)
+    params.require(:rooftop).permit(:name, :address, :description, :price_per_hour, :photo, :photo_cache)
   end
 end
