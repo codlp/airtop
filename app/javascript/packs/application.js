@@ -5,6 +5,7 @@ import { initSweetalert } from '../components/init_sweetalert';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import { initAutocomplete } from '../components/init_autocomplete';
 
 
 // loadDynamicBannerText();
@@ -22,6 +23,7 @@ initSweetalert('#sweet-alert-demo', {
 
 initMapbox();
 loadDynamicBannerText();
+initAutocomplete ();
 
 // initSweetalert('#sweet-alert-green', {
 //   title: "A nice alert",
