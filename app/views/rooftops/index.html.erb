@@ -41,8 +41,10 @@
 </div>
 
 <!-- MAP -->
-<div class="container">
+<div class="wrapper", style="background-color: lightgrey">
+  <br>
   <h2 class="text-center presentation-line">Locate our amazing rooftops</h2>
+  <div class="container">
   <div
     id="map"
     style="width: 100%;
@@ -50,4 +52,5 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
+  </div>
 </div>

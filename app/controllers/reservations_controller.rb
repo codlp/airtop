@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
-  before_action :set_reservation, only: [:show, :new, :destroy]
+  before_action :set_reservation, only: [:show, :new, :destroy, :accept, :decline]
 
   def index
     @reservations = policy_scope(reservation).order(created_at: :desc)
@@ -30,6 +30,18 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
+    redirect_to reservations_path
+  end
+
+  def accept
+    @reservation.status = "Accepted"
+    authorize @reservation
+    redirect_to reservations_path
+  end
+
+  def decline
+    @reservation.status = "Declined"
+    authorize @reservation
     redirect_to reservations_path
   end
 
