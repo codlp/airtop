@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 get '/myrooftops' => 'users#myrooftops', :as => :user_rooftops
 get '/myreservations' => 'users#myreservations', :as => :user_reservations
 get '/rooftops_reservations' => 'users#rooftops_reservations', :as => :rooftops_reservations
-
+get '/decline' => 'reservations#decline', :as => :decline_reservations
+get '/accept' => 'reservations#accept', :as => :accept_reservations
 end
