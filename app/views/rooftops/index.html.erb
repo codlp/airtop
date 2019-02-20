@@ -6,6 +6,9 @@
     <h1>
       <span id="banner-typed-text"></span>
     </h1>
+    <button class="btn btn-flat" > <%= link_to "I WANT TO RENT MY ROOFTOP", new_rooftop_path(@rooftop) %> </button>
+    <button class="btn btn-flat-book" > <%= link_to "I WANT TO BOOK A ROOFTOP", rooftops_path(@rooftop, anchor: 'presentation' ) %> </button>
+
   </div>
 </div>
 
@@ -15,6 +18,9 @@
 
 <div class="container">
   <h1 class="text-center presentation-line">Discover our amazing rooftops</h1>
+  <br>
+  <div id="presentation"></div>
+  <h1 class="text-center presentation-line">Our amazing rooftops</h1>
   <br>
   <div class="row">
     <% @rooftops.each do |rooftop| %>

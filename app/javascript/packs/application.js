@@ -1,3 +1,5 @@
+import "../plugins/flatpickr"
+
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import { initSweetalert } from '../components/init_sweetalert';
@@ -20,14 +22,3 @@ initSweetalert('#sweet-alert-demo', {
     link.click();
   }
 });
-
-
-initSweetalert('#sweet-alert-demo', {
-  title: "A nice alert",
-  text: "This is a great alert, isn't it?",
-  icon: "success"
-}, (value) => {
-  console.log(value);
-});
-
-
