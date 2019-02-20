@@ -10,10 +10,12 @@ class RooftopsController < ApplicationController
     @rooftops = Rooftop.where.not(latitude: nil, longitude: nil)
 
     @markers = @rooftops.map do |rooftop|
-     {
-      lng: rooftop.longitude,
-      lat: rooftop.latitude
-     }
+      {
+        lng: rooftop.longitude,
+        lat: rooftop.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { rooftop: rooftop }),
+        image_url: helpers.asset_url('marker.png')
+      }
     end
   end
 
