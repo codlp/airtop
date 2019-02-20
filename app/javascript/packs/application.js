@@ -1,11 +1,9 @@
-import "../plugins/flatpickr"
-
 import "bootstrap";
 
 import { loadDynamicBannerText } from '../components/banner';
 import { initSweetalert } from '../components/init_sweetalert';
 
-loadDynamicBannerText();
+// loadDynamicBannerText();
 
 initSweetalert('#sweet-alert-demo', {
   title: "Are you sure?",
@@ -18,3 +16,11 @@ initSweetalert('#sweet-alert-demo', {
   }
 });
 
+
+// initSweetalert('#sweet-alert-green', {
+//   title: "A nice alert",
+//   text: "This is a great alert, isn't it?",
+//   icon: "success"
+// }, (value) => {
+//   console.log(value);
+// });
