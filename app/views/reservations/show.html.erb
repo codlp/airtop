@@ -1,1 +1,31 @@
-"show.html.erb"
+<div class="container">
+  <br>
+  <div class="show-container">
+    <% if @rooftop.photo.present? %>
+    <%= cl_image_tag @rooftop.photo, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <div class="rooftop-presentation">
+      <h2> Your Rooftop Reservation </h2>
+      <h3><%= @rooftop.name.capitalize %></h3>
+      <h4><strong>Start time</strong></h4>
+      <p></p>
+
+      <h4>Hosted by</h4>
+
+      <ul>
+        <li>Adress: <%= @rooftop.address %></li>
+        <li>Description: <%= @rooftop.description %></li>
+        <li>Price per hour : <%= @rooftop.total_price %>€</li>
+      </ul>
+      <% if policy(@rooftop).edit? %>
+      <%= link_to "Cancel", destroy_reservation_path(@reservation), class: "btn medium-btn", style: "background-color: #3945C3" %>
+      <% end %>
+
+      <% if policy(@rooftop).destroy? %>
+        <button id="sweet-alert-demo" class="btn medium-btn"  style="background-color: #3945C3"" >Delete </button>
+        <%= link_to "Delete", rooftop_path(@rooftop), method: :delete, id: "delete-link", class: "hidden" %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
