@@ -1,5 +1,5 @@
 <div class="show-container">
-  <% if @rooftop.photo.present? %>
+  <% if @reservation.rooftop.photo.present? %>
   <%= cl_image_tag @rooftop.photo, height: 450, crop: :fill %>
   <% end %>
   <div class="rooftop-presentation">
