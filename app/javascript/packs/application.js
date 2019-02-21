@@ -1,3 +1,4 @@
+import "../plugins/flatpickr"
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import { initSweetalert } from '../components/init_sweetalert';
@@ -5,8 +6,8 @@ import { initSweetalert } from '../components/init_sweetalert';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import { initAutocomplete } from '../components/init_autocomplete';
 
-initMapbox();
 
 // loadDynamicBannerText();
 
@@ -21,6 +22,9 @@ initSweetalert('#sweet-alert-demo', {
   }
 });
 
+initMapbox();
+loadDynamicBannerText();
+initAutocomplete ();
 
 // initSweetalert('#sweet-alert-green', {
 //   title: "A nice alert",
