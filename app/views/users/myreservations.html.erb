@@ -1,9 +1,6 @@
 <div class="container">
-<<<<<<< HEAD
-  <h1 class="text-center presentation-line"> All my reservations <%= link_to "Post a new rooftop", new_rooftop_path(@rooftop), class: "btn flat-card-book" %></h1>
-=======
+
   <h1 class="text-center presentation-line"> All my reservations <%= link_to "Book again", rooftops_path, class: "btn medium-btn", style: "background-color: #3945C3" %></h1>
->>>>>>> d3b21026bd44c0c6197dd48549eec9ac418adf26
 
   <% @user.reservations.each do |reservation| %>
     <div class="message">
