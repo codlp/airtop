@@ -11,13 +11,20 @@
 .form-wrapper {
   background: #fafafa;
   margin: 3em auto;
-  padding: 0 1.8em;
+  padding: 30px;
   max-width: 370px;
+}
+
+.form-post-wrapper {
+  background: #fafafa;
+  margin: 3em auto;
+  padding: 30px;
+  max-width: 480px;
 }
 
 .title-sign {
   text-align: center;
-  padding: 1.8em 0;
+  padding: 1em 0;
   margin: 10px
 }
 
@@ -48,7 +55,7 @@ form {
 }
 
 .button-panel {
-  margin: 2em 0 0;
+  margin: 30px auto;
   width: 100%;
 }
 
