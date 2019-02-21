@@ -1,0 +1,28 @@
+<div class="container">
+
+  <h1 class="text-center presentation-line"> My messages <%= link_to "New message", new_reservation_message_path, class: "btn medium-btn", style: "background-color: #3945C3" %></h1>
+
+  <% @reservation.messages.each do |message| %>
+    <div class="message">
+      <div class="message-body">
+        <% if @reservation.user = @reservation.rooftop.user %>
+          <div class="container" id="left">
+            <p><strong>User ID: <%= message.reservation.user_id %></strong></p>
+            <p><%= message.content %></p>
+            <%= link_to reservation_message_path(@reservation, message), method: :delete, data: {confirm: "Are you sure?"} do %>
+            <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="container" id="right">
+            <p><strong>User ID: <%= message.reservation.user_id %></strong></p>
+            <p><%= message.content %></p>
+            <%= link_to reservation_message_path(@reservation, message), method: :delete, data: {confirm: "Are you sure?"} do %>
+            <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
