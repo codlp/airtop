@@ -1,5 +1,7 @@
 <div class="container">
-  <h3>Edit your rooftop</h3>
+  <div class="presentation-line">
+  <h3>Edit your rooftop</h3> <%= link_to "Back to list", rooftops_path, class: 'btn-flat-book-little' %>
+  </div>
 
   <hr>
     <%= simple_form_for(@rooftop) do |f| %>
@@ -9,16 +11,9 @@
       <%= f.input :price_per_hour %>
       <%= f.input :photo, input_html: { class: 'btn-input ml-2' } %>
       <%= f.input :photo_cache, as: :hidden %>
-      <%= f.submit class: 'btn btn-primary'%>
-      <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>
+      <%= f.submit class: 'pricing-button-green'%>
+      <%= link_to 'Cancel', '#', class: 'pricing-button-red' %>
     <% end %>
-  <hr>
-
-<<<<<<< HEAD
-  <%= link_to "B, rooftops_path, class: 'btn-flat-book' %>
-=======
-  <%= link_to " Back to list", rooftops_path %>
->>>>>>> d3b21026bd44c0c6197dd48549eec9ac418adf26
   <br>
 
 </div>

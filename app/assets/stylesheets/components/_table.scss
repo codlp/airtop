@@ -136,6 +136,54 @@ html {
   transition: all 150ms ease-in-out;
 }
 
+.pricing-button-green {
+  border: 1px solid #3bc162;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 25px 0;
+  padding: 15px 35px;
+  text-decoration: none;
+  color: #3bc162;
+  background-color: white;
+  transition: all 150ms ease-in-out;
+  & p {
+    text-decoration: none;
+    color: #3bc162;
+  }
+}
+
+.pricing-button-red {
+  border: 1px solid #ee5f5c;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 25px 0;
+  padding: 15px 35px;
+  text-decoration: none;
+  color: #ee5f5c;
+  background-color: white;
+  transition: all 150ms ease-in-out;
+  & a {
+    text-decoration: none;
+    color: #ee5f5c;
+  }
+}
+
+.pricing-button-blue {
+  border: 1px solid #438bca;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 25px 0;
+  padding: 15px 35px;
+  text-decoration: none;
+  color: #438bca;
+  background-color: white;
+  transition: all 150ms ease-in-out;
+  & a {
+    text-decoration: none;
+    color: #438bca;
+  }
+}
+
 .pricing-button:hover,
 .pricing-button:focus {
   background-color: #e1f1ff;

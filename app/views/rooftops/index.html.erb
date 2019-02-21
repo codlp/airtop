@@ -46,14 +46,12 @@
         <br>
       </div>
     <% end %>
-
   </div>
 </div>
 <!-- End of search results -->
 
 <!-- Index of rooftops -->
 <% if @rooftops_search.present? == false %>
-
   <div class="container">
     <h1 class="text-center presentation-line">Our amazing rooftops</h1>
     <div class="row">
@@ -81,10 +79,11 @@
 
 <% end %>
 <!-- End of rooftop index -->
-
 <!-- MAP -->
+<div class="wrapper" style="background-color: lightgrey">
 <div class="container">
   <h2 class="text-center presentation-line">Locate our amazing rooftops</h2>
+  <br>
   <div
     id="map"
     style="width: 100%;
@@ -92,4 +91,6 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
+  <br><br>
+  </div>
 </div>
