@@ -35,4 +35,4 @@ end
 gem 'devise'
 gem "pundit"
 gem 'geocoder'
-
+gem 'pg_search'

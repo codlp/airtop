@@ -5,7 +5,7 @@ class RooftopsController < ApplicationController
   def index
     @rooftops = policy_scope(Rooftop).order(created_at: :desc)
 
-    # MAP
+    # Map
     @rooftops = Rooftop.where.not(latitude: nil, longitude: nil)
 
     @markers = @rooftops.map do |rooftop|
@@ -14,6 +14,7 @@ class RooftopsController < ApplicationController
         lat: rooftop.latitude
       }
     end
+    @rooftops_search = Rooftop.search_by_name_and_address(params[:query])
   end
 
   def show
