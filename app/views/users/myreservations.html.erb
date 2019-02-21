@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1 class="text-center presentation-line"> All my reservations <%= link_to "Book again", rooftops_path, class: "btn medium-btn", style: "background-color: #3945C3" %></h1>
+  <h1 class="text-center presentation-line"> All my reservations <%= link_to "Book again", rooftops_path, class: 'btn-flat-book-little' %></h1>
 
   <% @user.reservations.each do |reservation| %>
     <div class="message">
@@ -8,13 +8,19 @@
         <%= cl_image_tag reservation.rooftop.photo, width: 100, height: 100, crop: :fill %>
       <% end %>
       <div class="message-body">
-        <p><strong><%= reservation.rooftop.name %></strong></p>
+        <p><strong><%= reservation.rooftop.name.upcase %></strong></p>
         <p><%= reservation.rooftop.description %></p>
         <p><%= reservation.rooftop.address %></p>
       </div>
 
       <div class="message-status">
-        <p class="status"><%= reservation.status %></p>
+        <% if reservation.status == "Pending" %>
+          <p class="status pending"><%= reservation.status %></p>
+        <% elsif reservation.status == "Accepted" %>
+          <p class="status accepted"><%= reservation.status %></p>
+        <% else %>
+          <p class="status declined"><%= reservation.status %></p>
+        <% end %>
         <p class="price"><%= ((reservation.end_at - reservation.start_at) * reservation.rooftop.price_per_hour / 3600) %>€</p>
       </div>
     </div>
