@@ -11,7 +11,8 @@ class RooftopsController < ApplicationController
     @markers = @rooftops.map do |rooftop|
       {
         lng: rooftop.longitude,
-        lat: rooftop.latitude
+        lat: rooftop.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { rooftop: rooftop })
       }
     end
     @rooftops_search = Rooftop.search_by_name_and_address(params[:query])
