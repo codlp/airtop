@@ -12,10 +12,12 @@
   <%= f.input :address,  input_html: { id: 'flat_address'} %>
   <%= f.input :description %>
   <%= f.input :price_per_hour %>
-  <%= f.input :photo, input_html: { class: 'btn-input ml-2' } %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit class: 'btn btn-primary'%>
-  <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>
+  <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+  <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+
+
+  <%= f.submit class: 'btn btn-flat-card-book'%>
+  <%= link_to 'Cancel', '#', class: 'btn-flat-card-cancel' %>
   <% end %>
 <br>
 </div>

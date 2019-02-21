@@ -184,3 +184,25 @@ a.big-btn:hover{
 }
 
 
+.btn-flat-card-cancel{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: #ff5a5f;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin: 12px;
+  font-weight: bold;
+}
+
+.btn-flat-card-cancel a {
+  color: white;
+}
+
+.btn-flat-card-cancel:hover {
+  transform: scale(1.03);
+  color: white;
+  opacity: 0.9;
+}
+
+
