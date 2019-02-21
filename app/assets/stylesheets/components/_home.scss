@@ -4,8 +4,17 @@
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.presentation-banner-text {
+  color: white;
 }
 
 .container {
   padding: 0px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
 }

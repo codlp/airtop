@@ -8,7 +8,10 @@
 .tabs a:hover {
   cursor: pointer;
   text-decoration: none;
-  opacity: 0.8;
+  box-shadow: 0px 0px 8px white;
+  background-color: white;
+  opacity: 0.95;
+  color: #3945C3;
 }
 .tabs h3 {
   font-size: 17px;
