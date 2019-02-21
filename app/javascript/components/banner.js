@@ -2,6 +2,7 @@ import Typed from 'typed.js';
 
 const loadDynamicBannerText = () => {
   const banner = document.getElementById('banner-typed-text');
+  console.log(banner)
   if (banner) {
     new Typed('#banner-typed-text', {
       strings: ["Paris", "London", "New York", "Milan", "Berlin", "Madrid"],
