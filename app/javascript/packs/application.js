@@ -7,6 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initAutocomplete } from '../components/init_autocomplete';
+import { previewImageOnFileSelect } from '../components/photo_preview.js'
 
 
 // loadDynamicBannerText();
@@ -24,8 +25,8 @@ initSweetalert('#sweet-alert-demo', {
 
 initMapbox();
 loadDynamicBannerText();
-initAutocomplete ();
-
+initAutocomplete();
+previewImageOnFileSelect();
 // initSweetalert('#sweet-alert-green', {
 //   title: "A nice alert",
 //   text: "This is a great alert, isn't it?",

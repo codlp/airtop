@@ -112,8 +112,28 @@ a.big-btn:hover{
   text-decoration: none;
   margin: 12px;
   font-weight: bold;
+}
+
+.btn-flat-book-little{
+  color: white;
+  font-size: 20px;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: #3945C3;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin: 12px;
+  font-weight: lighter;
 
 }
+
+.btn-flat-book-little:hover {
+  transform: scale(1.03);
+  text-decoration: none;
+  color: white;
+  opacity: 0.9;
+}
+
 .btn-flat-book a {
   color: white;
 }
@@ -135,8 +155,7 @@ a.big-btn:hover{
   transition: background 0.3s ease;
   text-decoration: none;
   margin: 12px;
-  font-weight: bold;
-
+  font-weight: lighter;
 }
 
 .btn-flat-card-book a {
@@ -145,6 +164,8 @@ a.big-btn:hover{
 
 .btn-flat-card-book:hover {
   transform: scale(1.03);
+  color: white;
+  opacity: 0.9;
 }
 
 .btn-flat-card-book a:hover {
@@ -161,6 +182,28 @@ a.big-btn:hover{
   border-radius: 25px;
   transform: rotate(45deg);
   color: white;
+}
+
+
+.btn-flat-card-cancel{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 10px;
+  background: #ff5a5f;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin: 12px;
+  font-weight: bold;
+}
+
+.btn-flat-card-cancel a {
+  color: white;
+}
+
+.btn-flat-card-cancel:hover {
+  transform: scale(1.03);
+  color: white;
+  opacity: 0.9;
 }
 
 

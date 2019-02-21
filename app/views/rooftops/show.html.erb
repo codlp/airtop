@@ -22,11 +22,11 @@
         </div>
       </div>
       <% if policy(@rooftop).edit? %>
-      <%= link_to "Update", edit_rooftop_path(@rooftop), class: "pricing-button" %>
+      <%= link_to "Update", edit_rooftop_path(@rooftop), class: "pricing-button-blue" %>
       <% end %>
 
       <% if policy(@rooftop).destroy? %>
-      <button id="sweet-alert-demo" class="pricing-button">Delete</button>
+      <button id="sweet-alert-demo" class="pricing-button-red">Delete</button>
       <%= link_to "Delete", rooftop_path(@rooftop), method: :delete, id: "delete-link", class: "hidden" %>
       <% end %>
     </div>
@@ -36,6 +36,7 @@
       <% end %>
 
     </div>
+    <% if @rooftop.user != current_user %>
     <div class="calendar">
       <div class="form-wrapper list-inline" style="width: 400px; margin: 0 auto;">
         <h2>Book this rooftop now</h2>
@@ -46,4 +47,5 @@
         <% end %>
       </div>
     </div>
+    <% end %>
 

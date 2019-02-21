@@ -1,21 +1,34 @@
 <div class="container">
-  <div class="post">
-    <h1>Post a new rooftop</h1>
-    <button type="button" class="btn btn-warning btn-circle btn-lg">
-            <%= link_to "+", rooftops_path %>
-    </button>
-
-  </div>
-  <hr>
   <%= simple_form_for(@rooftop) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address,  input_html: { id: 'flat_address'} %>
-  <%= f.input :description %>
-  <%= f.input :price_per_hour %>
-  <%= f.input :photo, input_html: { class: 'btn-input ml-2' } %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit class: 'btn btn-primary'%>
-  <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>
-  <% end %>
-<br>
+  <div class="post">
+    <div class="form-post-wrapper">
+      <h1 class="text-center">Post a new rooftop</h1>
+      <div class="form-item">
+        <%= f.input :name, placeholder: 'Enter the place name' %>
+      </div>
+      <%= f.input :address, placeholder: 'Address',  input_html: { id: 'flat_address'} %>
+      <div class="form-item">
+        <%= f.input :description, placeholder: 'Can you describe the place ?' %>
+      </div>
+      <div class="form-item">
+        <%= f.input :price_per_hour, placeholder: 'Enter your price here' %>
+      </div>
+      <div class="form-item">
+        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+      </div>
+      <div class="form-item">
+        <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+      </div>
+      <%= f.submit class: 'pricing-button-green'%>
+      <%= link_to 'Cancel', '#', class: 'pricing-button-red' %>
+      <% end %>
+      <br>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
