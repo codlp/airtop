@@ -30,6 +30,10 @@
 
 .presentation-line {
   font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 15px;
 }
 
 #banner-typed-text {
@@ -39,10 +43,10 @@
 }
 
 #banner-text {
-font-weight: lighter;
-font-size: 70px;
-padding-bottom: 20px;
-letter-spacing: 3px;
+  font-weight: lighter;
+  font-size: 70px;
+  padding-bottom: 20px;
+  letter-spacing: 3px;
 }
 
 .post {

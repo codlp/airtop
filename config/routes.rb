@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   resources :rooftops do
     resources :reservations, only: [:new, :create]
   end
-  resources :reservations, only: [:show]
-get '/myrooftops' => 'users#myrooftops', :as => :user_rooftops
-get '/myreservations' => 'users#myreservations', :as => :user_reservations
-get '/rooftops_reservations' => 'users#rooftops_reservations', :as => :rooftops_reservations
-get '/decline' => 'reservations#decline', :as => :decline_reservations
-get '/accept' => 'reservations#accept', :as => :accept_reservations
+  resources :reservations, only: [:show] do
+    member do
+      get :decline
+      get :accept
+    end
+  end
+  get '/myrooftops' => 'users#myrooftops', :as => :user_rooftops
+  get '/myreservations' => 'users#myreservations', :as => :user_reservations
+  get '/rooftops_reservations' => 'users#rooftops_reservations', :as => :rooftops_reservations
 end

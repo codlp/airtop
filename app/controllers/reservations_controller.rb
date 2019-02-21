@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show, :index]
+  skip_before_action :authenticate_user!, only: [:show, :index, :accept, :decline]
   before_action :set_reservation, only: [:show, :new, :destroy, :accept, :decline]
 
   def index
@@ -34,22 +34,23 @@ class ReservationsController < ApplicationController
   end
 
   def accept
+    skip_authorization
     @reservation.status = "Accepted"
-    authorize @reservation
-    redirect_to reservations_path
+    @reservation.save
+    redirect_to rooftops_reservations_path
   end
 
   def decline
+    skip_authorization
     @reservation.status = "Declined"
-    authorize @reservation
-    redirect_to reservations_path
+    @reservation.save
+    redirect_to rooftops_reservations_path
   end
 
   private
 
   def set_reservation
     @reservation = Reservation.find(params[:id])
-    authorize @reservation
   end
 
   def reservation_params

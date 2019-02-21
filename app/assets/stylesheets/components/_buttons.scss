@@ -107,10 +107,10 @@ a.big-btn:hover{
   color: white;
   padding: 8px 24px;
   border-radius: 10px;
-  background: #59A5EF;
+  background: #3945C3;
   transition: background 0.3s ease;
   text-decoration: none;
-  margin: 35px;
+  margin: 12px;
   font-weight: bold;
 
 }
@@ -131,7 +131,7 @@ a.big-btn:hover{
   color: white;
   padding: 8px 24px;
   border-radius: 10px;
-  background: #59A5EF;
+  background: #3945C3;
   transition: background 0.3s ease;
   text-decoration: none;
   margin: 12px;
@@ -152,6 +152,13 @@ a.big-btn:hover{
   text-decoration: none;
 }
 
-
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
 
 
