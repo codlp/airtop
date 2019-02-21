@@ -1,7 +1,10 @@
 <div class="container">
   <div class="post">
     <h1>Post a new rooftop</h1>
-    <%= link_to "Back to list", rooftops_path, class: "btn-flat-book"%>
+    <button type="button" class="btn btn-warning btn-circle btn-lg">
+            <%= link_to "Click wesh", rooftops_path %>
+    </button>
+
   </div>
   <hr>
   <%= simple_form_for(@rooftop) do |f| %>
