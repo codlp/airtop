@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center presentation-line"> My Rooftops' Dashboard <%= link_to "Post a new rooftop", new_rooftop_path(@rooftop), class: "btn medium-btn", style: "background-color: #3945C3" %></h1>
+  <h1 class="text-center presentation-line"> My Rooftops' Dashboard <%= link_to "Post a new rooftop", new_rooftop_path(@rooftop), class: 'btn-flat-book-little', style: "padding: 15px" %></h1>
   <div class="tabs">
     <a class="tab active" href="/myrooftops">
       <h3>My rooftops</h3>
@@ -22,7 +22,7 @@
               <% end %>
               <div class="card-bottom">
                 <h2><%= rooftop.name %></h2>
-                <h5 class="card-trip-pricing"><%= link_to " See it ", rooftop_path(rooftop), class: "btn medium-btn", style: "background-color: #2281D0"%> <div class="link">Price: <%= rooftop.price_per_hour %> € </div></h5>
+                <h5 class="card-trip-pricing"><%= link_to "See & Edit", rooftop_path(rooftop), class: 'btn-flat-book-little', style: "background-color: #438bca"%> <div class="link">Price: <%= rooftop.price_per_hour %> € </div></h5>
                 <img src='https://d1qb2nb5cznatu.cloudfront.net/users/3459455-large?1516069194' class="card-trip-user avatar-bordered"/>
               </div>
             </div>
