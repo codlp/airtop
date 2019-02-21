@@ -1,6 +1,7 @@
 .tabs {
   display: flex;
-  padding: 10px 10px 0 10px
+  padding: 10px 10px 0 10px;
+  width: 1900px;
 }
 .tabs a {
   color: white;
@@ -8,7 +9,10 @@
 .tabs a:hover {
   cursor: pointer;
   text-decoration: none;
-  opacity: 0.8;
+  box-shadow: 0px 0px 8px white;
+  background-color: white;
+  opacity: 0.95;
+  color: #3945C3;
 }
 .tabs h3 {
   font-size: 17px;
@@ -25,6 +29,7 @@
   text-align: center;
   padding: 12px;
   padding-top: 20px;
+  box-shadow: 0px -3px 3px grey;
 }
 .tab:first-child {
   border-radius: 10px 0 0 0;

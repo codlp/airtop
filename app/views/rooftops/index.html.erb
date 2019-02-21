@@ -1,29 +1,37 @@
 <!-- Banner -->
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1459219497165-4f01989c7d85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1732&q=80);">
-  <div class="container text-center">
+  <div class="text-center">
     <h1 id="banner-text" >BOOK A ROOFTOP IN</h1>
     <h1>
       <span id="banner-typed-text"></span>
     </h1>
+    <br><br>
     <!-- Search bar -->
-    <div class="container">
+    <div class="around-search">
+      <div class="search">
         <%= form_tag rooftops_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "search-bar form-control",
-            placeholder: "Search for a city, an address, or a particular rooftop"
+        <%= text_field_tag :query,
+        params[:query],
+        class: "search-bar form-control",
+          placeholder: "Search for a city, an address, or a particular rooftop"
           %>
-        <% end %>
+      <div class="wrap">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+      </button>
+      </div>
+          <% end %>
+        </div>
+      </div>
+      <!-- End of search bar -->
     </div>
-    <!-- End of search bar -->
   </div>
-</div>
 
-<!-- Search results -->
-<div class="container">
-  <div class="row">
-    <% if @rooftops_search.present? %>
+  <!-- Search results -->
+  <div class="container">
+    <div class="row">
+      <% if @rooftops_search.present? %>
 
       <h1 class="text-center presentation-line">Search results</h1>
       <% @rooftops_search.each do |rooftop| %>
@@ -45,15 +53,15 @@
         <% end %>
         <br>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
-<!-- End of search results -->
+  <!-- End of search results -->
 
-<!-- Index of rooftops -->
-<% if @rooftops_search.present? == false %>
+  <!-- Index of rooftops -->
+  <% if @rooftops_search.present? == false %>
   <div class="container">
-    <h1 class="text-center presentation-line">Our amazing rooftops</h1>
+    <h1 class="text-center presentation-line">All our amazing rooftops</h1>
     <div class="row">
       <% @rooftops.each do |rooftop| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -76,22 +84,21 @@
       </div>
     </div>
   </div>
-
 <% end %>
-<!-- End of rooftop index -->
 
-<!-- MAP -->
-<div class="wrapper" style="background-color: lightgrey">
-<div class="container">
-  <h2 class="text-center presentation-line">Locate our amazing rooftops</h2>
-  <br>
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
-  <br><br>
+  <!-- End of rooftop index -->
+  <!-- MAP -->
+  <div class="wrapper" style="background-color: lightgrey">
+    <div class="container">
+      <h2 class="text-center presentation-line">Locate our amazing rooftops</h2>
+      <br>
+      <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+      <br><br>
+    </div>
   </div>
-</div>
