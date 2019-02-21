@@ -1,11 +1,15 @@
 import "../plugins/flatpickr"
-
 import "bootstrap";
-
 import { loadDynamicBannerText } from '../components/banner';
 import { initSweetalert } from '../components/init_sweetalert';
+// MAP
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from '../plugins/init_mapbox';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import { initAutocomplete } from '../components/init_autocomplete';
 
-loadDynamicBannerText();
+
+// loadDynamicBannerText();
 
 initSweetalert('#sweet-alert-demo', {
   title: "Are you sure?",
@@ -18,11 +22,15 @@ initSweetalert('#sweet-alert-demo', {
   }
 });
 
+initMapbox();
+loadDynamicBannerText();
+initAutocomplete ();
 
-initSweetalert('#sweet-alert-green', {
-  title: "A nice alert",
-  text: "This is a great alert, isn't it?",
-  icon: "success"
-}, (value) => {
-  console.log(value);
-});
+// initSweetalert('#sweet-alert-green', {
+//   title: "A nice alert",
+//   text: "This is a great alert, isn't it?",
+//   icon: "success"
+// }, (value) => {
+//   console.log(value);
+// });
+

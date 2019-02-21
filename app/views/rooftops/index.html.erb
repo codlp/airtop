@@ -2,21 +2,20 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1459219497165-4f01989c7d85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1732&q=80);">
   <div class="container text-center">
-  <h1 id="banner-text" >BOOK A ROOFTOP IN</h1>
+    <h1 id="banner-text" >BOOK A ROOFTOP IN</h1>
     <h1>
       <span id="banner-typed-text"></span>
     </h1>
     <button class="btn btn-flat" > <%= link_to "I WANT TO RENT MY ROOFTOP", new_rooftop_path(@rooftop) %> </button>
+    <button class="btn btn-flat-book" > <%= link_to "I WANT TO BOOK A ROOFTOP", rooftops_path(@rooftop, anchor: 'presentation' ) %> </button>
 
   </div>
 </div>
 
 <!-- End of banner -->
-
-<br>
 <div class="container">
-  <br>
-  <h1 class="text-center presentation-line">Our amazing rooftops</h1>
+  <div id="presentation"></div>
+  <h1 class="text-center presentation-line">Discover our amazing rooftops</h1>
   <br>
   <div class="row">
     <% @rooftops.each do |rooftop| %>
@@ -28,16 +27,30 @@
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "photo-1493246318656-5bfd4cfb29b8_1", height: 300, crop: :fill %>')">
             <% end %>
             <div class="card-bottom">
-              <h2><%= rooftop.name %></h2>
-              <h5 class="card-trip-pricing"><%= link_to " See it ", rooftop_path(rooftop), class: "btn medium-btn", style: "background-color: #2281D0"%> <div class="link">Price: <%= rooftop.price_per_hour %> € </div></h5>
+              <h2><%= rooftop.name.upcase %></h2>
+              <h5 class="card-trip-pricing"><%= link_to " See it ", rooftop_path(rooftop), class: "btn btn-flat-card-book"%> <div class="link">Price: <%= rooftop.price_per_hour %> € </div></h5>
               <img src='https://d1qb2nb5cznatu.cloudfront.net/users/3459455-large?1516069194' class="card-trip-user avatar-bordered"/>
             </div>
           </div>
-
         </div>
       </div>
-    <% end %>
+      <% end %>
+      <br>
     </div>
   </div>
 </div>
 
+<!-- MAP -->
+<div class="wrapper", style="background-color: lightgrey">
+  <br>
+  <h2 class="text-center presentation-line">Locate our amazing rooftops</h2>
+  <div class="container">
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+  </div>
+</div>

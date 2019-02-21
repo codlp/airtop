@@ -25,7 +25,10 @@ const initMapbox = () => {
   }
 };
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> ca65b4170a29ede49e447ce1970b5e7496ac1592
 export { initMapbox };

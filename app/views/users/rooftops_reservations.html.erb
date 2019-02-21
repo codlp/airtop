@@ -1,0 +1,34 @@
+<div class="container">
+  <h1 class="text-center presentation-line"> All my reservations <%= link_to "Post a new rooftop", new_rooftop_path(@rooftop), class: "btn medium-btn", style: "background-color: #3945C3" %></h1>
+  <div class="tabs">
+    <a class="tab" href="/myrooftops">
+      <h3>My rooftops</h3>
+    </a>
+    <a class="tab active" href="/rooftops_reservations">
+      <h3>My rooftops'  Reservations</h3>
+    </a>
+  </div>
+</div>
+<div class="wrapper" style="background-color: white">
+  <div class="container rooftops-list">
+
+    <% @user.reservations.each do |reservation| %>
+    <div class="message">
+      <%= link_to rooftop_path(reservation) do %>
+        <%= cl_image_tag reservation.rooftop.photo, width: 100, height: 100, crop: :fill %>
+      <% end %>
+      <div class="message-body">
+        <p><strong><%= reservation.rooftop.name %></strong></p>
+        <p><%= reservation.rooftop.description %></p>
+        <p><%= reservation.rooftop.address %></p>
+      </div>
+      <div class="message-status">
+        <p class="status"><%= reservation.status %></p>
+        <p class="price"><%= ((reservation.end_at - reservation.start_at) * reservation.rooftop.price_per_hour / 3600) %>€</p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+</div>
+</div>

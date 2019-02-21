@@ -38,6 +38,10 @@
   justify-content: flex-start;
 }
 
+.card-bottom h2 {
+  color: white;
+}
+
 .card-bottom #text {
   padding: 20px;
 }
@@ -56,4 +60,8 @@
   top: -15px;
   width: 40px;
   bottom: 50px;
+}
+
+.row {
+  margin-bottom: 20px;
 }
