@@ -13,6 +13,8 @@
         <p><%= reservation.rooftop.address %></p>
       </div>
 
+      <%= link_to "Messages", new_reservation_message_path(reservation), class: "btn medium-btn", style: "background-color: #1fdc89" %>
+
       <div class="message-status">
         <p class="status"><%= reservation.status %></p>
         <p class="price"><%= ((reservation.end_at - reservation.start_at) * reservation.rooftop.price_per_hour / 3600) %>€</p>

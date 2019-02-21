@@ -23,8 +23,9 @@
         <p>Address: <%= reservation.rooftop.address %></p>
       </div>
       <% if reservation.status == "Pending" %>
-      <%= link_to "Accept", accept_reservation_path(reservation), class: "btn medium-btn", style: "background-color: #1fdc89" %>
-      <%= link_to "Decline", decline_reservation_path(reservation), class: "btn medium-btn", style: "background-color: #3945C3" %>
+      <%= link_to "Accept", accept_reservation_path(reservation), class: "btn medium-btn", id: "accept", style: "background-color: #1fdc89" %>
+      <%= link_to "Decline", decline_reservation_path(reservation), class: "btn medium-btn", id: "decline", style: "background-color: #3945C3" %>
+      <%= link_to "Message", new_reservation_message_path(reservation), class: "btn btn-outline-dark", id: "message"%>
       <% end %>
 
       <div class="message-status">
