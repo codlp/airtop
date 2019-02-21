@@ -1,3 +1,4 @@
+import "../plugins/flatpickr"
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import { initSweetalert } from '../components/init_sweetalert';

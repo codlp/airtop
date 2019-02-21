@@ -13,11 +13,11 @@
 
 .pricing-table{
   flex-direction: row;
-  height:150px;
+  height: max-content;
   padding: 10px;
 }
 
 .pricing-plan {
-padding: 5px 16px;
-height: max-content;
+  padding: 5px 16px;
+  height: max-content;
 }

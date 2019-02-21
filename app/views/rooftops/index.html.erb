@@ -14,10 +14,8 @@
 
 <!-- End of banner -->
 <div class="container">
-  <h1 class="text-center presentation-line">Discover our amazing rooftops</h1>
-  <br>
   <div id="presentation"></div>
-  <h1 class="text-center presentation-line">Our amazing rooftops</h1>
+  <h1 class="text-center presentation-line">Discover our amazing rooftops</h1>
   <br>
   <div class="row">
     <% @rooftops.each do |rooftop| %>
@@ -43,8 +41,10 @@
 </div>
 
 <!-- MAP -->
-<div class="container">
+<div class="wrapper", style="background-color: lightgrey">
+  <br>
   <h2 class="text-center presentation-line">Locate our amazing rooftops</h2>
+  <div class="container">
   <div
     id="map"
     style="width: 100%;
@@ -52,4 +52,5 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
+  </div>
 </div>
