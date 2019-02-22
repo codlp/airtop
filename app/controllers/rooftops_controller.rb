@@ -3,6 +3,7 @@ class RooftopsController < ApplicationController
   before_action :set_rooftop, only: [:show, :edit, :update, :destroy]
 
   def index
+    @user = current_user
     @rooftops = policy_scope(Rooftop).order(created_at: :desc)
 
     # Map
@@ -13,7 +14,6 @@ class RooftopsController < ApplicationController
         lng: rooftop.longitude,
         lat: rooftop.latitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { rooftop: rooftop })
-
       }
     end
     @rooftops_search = Rooftop.search_by_name_and_address(params[:query])
