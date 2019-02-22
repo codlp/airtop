@@ -1,51 +1,58 @@
 <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1459219497165-4f01989c7d85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1732&q=80);">
-    <div class="container">
-      <br>
-      <h1 class="text-center presentation-line presentation-banner-text"> My Rooftops' Dashboard <%= link_to "Post a new rooftop", new_rooftop_path(@rooftop), class: 'btn-flat-book-little', style: "padding: 15px" %></h1>
-      <div class="tabs">
-        <a class="tab" href="/myrooftops">
-          <h3>My rooftops</h3>
-        </a>
-        <a class="tab active" href="/rooftops_reservations">
-          <h3>My rooftops'  Reservations</h3>
-        </a>
-      </div>
-    </div>
-  
-    <div class="wrapper" style="background-color: white; height: 70vh;">
-      <div class="container rooftops-list">
-        <br>
-        <% @user.reservations.each do |reservation| %>
-        <div class="message">
-          <%= link_to rooftop_path(reservation) do %>
-          <%= cl_image_tag reservation.rooftop.photo, width: 100, height: 100, crop: :fill, style: "border-radius: 5px;"%>
-          <% end %>
-          <div class="message-body">
-            <p><strong><%= reservation.rooftop.name.upcase %></strong></p>
-            <p><%= reservation.rooftop.description %></p>
-            <p>Address: <%= reservation.rooftop.address %></p>
-          </div>
-          <% if reservation.status == "Pending" %>
-          <%= link_to "Accept", accept_reservation_path(reservation), class: "btn medium-btn", style: "background-color: #1fdc89" %>
-          <%= link_to "Decline", decline_reservation_path(reservation), class: "btn medium-btn", style: "background-color: #3945C3" %>
-          <%= link_to "Message", new_reservation_message_path(reservation), class: "btn btn-outline-dark", id: "message"%>
-          <% end %>
-
-          <div class="message-status">
-            <% if reservation.status == "Pending" %>
-            <p class="status pending"><%= reservation.status %></p>
-            <% elsif reservation.status == "Accepted" %>
-            <p class="status accepted"><%= reservation.status %></p>
-            <% else %>
-            <p class="status declined"><%= reservation.status %></p>
-            <% end %>
-
-            <p class="price"><%= ((reservation.end_at - reservation.start_at) * reservation.rooftop.price_per_hour / 3600) %>€</p>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <br>
+  <div class="container">
+    <br>
+    <h1 class="text-center presentation-line presentation-banner-text"> My Rooftops' Dashboard <%= link_to "Post a new rooftop", new_rooftop_path(@rooftop), class: 'btn-flat-book-little', style: "padding: 15px" %></h1>
+    <div class="tabs">
+      <a class="tab" href="/myrooftops">
+        <h3>My rooftops</h3>
+      </a>
+      <a class="tab active" href="/rooftops_reservations">
+        <h3>My rooftops'  Reservations</h3>
+      </a>
     </div>
   </div>
+
+  <div class="wrapper" style="background-color: white; height: 70vh;">
+    <div class="container rooftops-list">
+      <br>
+      <% @user = current_user %>
+      <% @user.reservations_as_owner.each do |reservation| %>
+      <div class="message">
+        <%= link_to rooftop_path(reservation) do %>
+        <%= cl_image_tag reservation.rooftop.photo, width: 100, height: 100, crop: :fill, style: "border-radius: 5px;"%>
+        <% end %>
+        <div class="message-body">
+          <p><strong><%= reservation.rooftop.name.upcase %></strong></p>
+          <p><%= reservation.rooftop.description %></p>
+          <p>Address: <%= reservation.rooftop.address %></p>
+        </div>
+
+        <% if reservation.messages.present? %>
+        <%= link_to "See messages", new_reservation_message_path(reservation), class: "btn medium-btn", style: "background-color: #66aee9" %>
+        <% else %>
+        <%= link_to "New message", new_reservation_message_path(reservation), class: "btn medium-btn", style: "background-color: #66aee9" %>
+        <% end %>
+
+        <% if reservation.status == "Pending" %>
+        <%= link_to "Accept", accept_reservation_path(reservation), class: "btn medium-btn", style: "background-color: #1fdc89" %>
+        <%= link_to "Decline", decline_reservation_path(reservation), class: "btn medium-btn", style: "background-color: #3945C3" %>
+        <% end %>
+
+        <div class="message-status">
+          <% if reservation.status == "Pending" %>
+          <p class="status pending"><%= reservation.status %></p>
+          <% elsif reservation.status == "Accepted" %>
+          <p class="status accepted"><%= reservation.status %></p>
+          <% else %>
+          <p class="status declined"><%= reservation.status %></p>
+          <% end %>
+
+          <p class="price"><%= ((reservation.end_at - reservation.start_at) * reservation.rooftop.price_per_hour / 3600) %>€</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <br>
+  </div>
+</div>
 </div>

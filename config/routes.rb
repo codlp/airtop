@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "rooftops#index"
   resources :users, only: [:show, :edit, :update]
   resources :rooftops do
-    resources :reservations, only: [:new, :create]
+    resources :reservations, only: [:new, :create, :index]
   end
   resources :reservations, only: [:show] do
     member do
