@@ -5,16 +5,19 @@
   margin-top: 20px;
   padding: 25px;
   border: 2px solid #3945c3;
+  opacity: 0.85;
 }
 
 .search-bar:focus{
   color: #3945c3;
+  opacity: 1;
 }
 
 .searchButton {
 position: absolute;
     right: -147px;
     top: -15px;
+    left: 521px;
     width: 58px;
     height: 50px;
     border: 1px solid #3945c3;
