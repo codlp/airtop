@@ -1,0 +1,5 @@
+<strong><%= rooftop.name.upcase %></strong> <br>
+<%= cl_image_tag rooftop.photo, height: 100, crop: :fill, class: 'picture-pop' %> <br>
+<%= rooftop.description.capitalize %> <br>
+<hr>
+<%= link_to " See it ", rooftop_path(rooftop), class: "btn btn-flat-pop-book"%>

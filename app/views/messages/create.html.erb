@@ -1,0 +1,14 @@
+<div class="container">
+
+  <h1 class="text-center presentation-line"> My messages <%= link_to "New message", reservation_messages_path, class: "btn medium-btn", style: "background-color: #3945C3" %></h1>
+
+  <% @reservation.messages.each do |message| %>
+    <div class="message">
+      <div class="message-body">
+        <p><strong>User ID: <%= message.reservation.user_id %></strong></p>
+        <p><%= message.content %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
