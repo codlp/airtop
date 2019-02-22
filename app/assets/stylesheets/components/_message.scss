@@ -55,10 +55,39 @@
   color: lightgrey;
 }
 
-.left {
-  margin-right: 200px;
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
-.right {
-  margin-left: 200px;
+.message-content {
+  font-size: 20px
+}
+
+.message-right {
+
+}
+
+.avatar {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.avatar right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.trash-right {
+  float: right;
+  margin-right: 20px;
+}
+
+.trash-left {
+  float: left;
+  margin-right: 20px;
 }

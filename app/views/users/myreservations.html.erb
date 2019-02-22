@@ -9,8 +9,8 @@
       <% end %>
       <div class="message-body">
         <p><strong><%= reservation.rooftop.name.upcase %></strong></p>
+        <p><strong>Address: <%= reservation.rooftop.address %></strong></p>
         <p><%= reservation.rooftop.description %></p>
-        <p><%= reservation.rooftop.address %></p>
       </div>
 
       <%= link_to "Messages", new_reservation_message_path(reservation), class: "btn medium-btn", style: "background-color: #1fdc89" %>
