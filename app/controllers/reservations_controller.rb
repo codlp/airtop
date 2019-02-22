@@ -34,7 +34,8 @@ class ReservationsController < ApplicationController
   end
 
   def accept
-    skip_authorization
+    skip_autho
+    rization
     @reservation.status = "Accepted"
     @reservation.save
     redirect_to rooftops_reservations_path

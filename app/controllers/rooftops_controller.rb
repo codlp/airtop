@@ -3,6 +3,7 @@ class RooftopsController < ApplicationController
   before_action :set_rooftop, only: [:show, :edit, :update, :destroy]
 
   def index
+    @user = current_user
     @rooftops = policy_scope(Rooftop).order(created_at: :desc)
 
     # Map
