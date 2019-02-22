@@ -1,68 +1,69 @@
-  <div class="show-container">
-    <div class="rooftop-presentation">
-      <h2 class="text-center"><%= @rooftop.name.capitalize %></h2>
+  <div class="show-b">
+    <div class="show-container">
+      <div class="rooftop-presentation">
+        <h2 class="text-center"><%= @rooftop.name.capitalize %></h2>
 
-      <div class="panel pricing-table">
-        <div class="pricing-plan">
-          <img src="https://image.flaticon.com/icons/svg/1250/1250252.svg" alt="" class="pricing-img">
-          <h2 class="pricing-header"> Description </h2>
-          <span class="pricing-price"><%= @rooftop.description %></span>
-        </div>
+        <div class="panel pricing-table">
+          <div class="pricing-plan">
+            <img src="https://image.flaticon.com/icons/svg/1250/1250252.svg" alt="" class="pricing-img">
+            <h2 class="pricing-header"> Description </h2>
+            <span class="pricing-price"><%= @rooftop.description %></span>
+          </div>
 
-        <div class="pricing-plan">
-          <img src="https://image.flaticon.com/icons/svg/1250/1250292.svg" alt="" class="pricing-img">
-          <h2 class="pricing-header"> Address </h2>
-          <span class="pricing-price"> <%= @rooftop.address %> </span>
-        </div>
+          <div class="pricing-plan">
+            <img src="https://image.flaticon.com/icons/svg/1250/1250292.svg" alt="" class="pricing-img">
+            <h2 class="pricing-header"> Address </h2>
+            <span class="pricing-price"> <%= @rooftop.address %> </span>
+          </div>
 
-        <div class="pricing-plan">
-          <img src="https://image.flaticon.com/icons/svg/1250/1250181.svg" alt="" class="pricing-img">
-          <h2 class="pricing-header"> Price </h2>
-          <span class="pricing-price"><%= @rooftop.price_per_hour %>€</span>
+          <div class="pricing-plan">
+            <img src="https://image.flaticon.com/icons/svg/1250/1250181.svg" alt="" class="pricing-img">
+            <h2 class="pricing-header"> Price </h2>
+            <span class="pricing-price"><%= @rooftop.price_per_hour %>€</span>
+          </div>
         </div>
+        <% if policy(@rooftop).edit? %>
+        <%= link_to "Update", edit_rooftop_path(@rooftop), class: "pricing-button-blue" %>
+        <% end %>
+
+        <% if policy(@rooftop).destroy? %>
+        <button id="sweet-alert-demo" class="pricing-button-red">Delete</button>
+        <%= link_to "Delete", rooftop_path(@rooftop), method: :delete, id: "delete-link", class: "hidden" %>
+        <% end %>
       </div>
-      <% if policy(@rooftop).edit? %>
-      <%= link_to "Update", edit_rooftop_path(@rooftop), class: "pricing-button-blue" %>
-      <% end %>
 
-      <% if policy(@rooftop).destroy? %>
-      <button id="sweet-alert-demo" class="pricing-button-red">Delete</button>
-      <%= link_to "Delete", rooftop_path(@rooftop), method: :delete, id: "delete-link", class: "hidden" %>
-      <% end %>
-    </div>
-
-    <div class="rooftop-picture"><% if @rooftop.photo.present? %>
-      <%= cl_image_tag @rooftop.photo, height: 600, width: 700, crop: :fill %></div>
-      <% end %>
-
-    </div>
-    <% if @rooftop.user != current_user %>
-    <div class="calendar">
-      <div class="form-wrapper list-inline" style="width: 400px; margin: 0 auto;">
-        <h2>Book this rooftop now</h2>
-        <%= simple_form_for [@rooftop, @reservation] do |f| %>
-        <%= f.input :start_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.button :submit, "Book now", class: "btn btn-primary" %>
+      <div class="rooftop-picture" style="width: 50vw;"><% if @rooftop.photo.present? %>
+        <%= cl_image_tag @rooftop.photo, height: 600, width: 1000, crop: :fill %></div>
         <% end %>
       </div>
     </div>
-    <% end %>
+    <div class="show-booking">
+      <div class="calendar">
+        <% if @rooftop.user != current_user %>
+        <div class="form-wrapper list-inline" style="width: 100%; margin: 0 auto;">
+          <h2>Book this rooftop now</h2>
+          <%= simple_form_for [@rooftop, @reservation] do |f| %>
+          <%= f.input :start_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.button :submit, "Book now", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
 
-      <div class="wrapper" style="background-color: AliceBlue ">
-    <div class="container">
-      <br>
-      <h2 class="text-center" class="presentation-line" > <%= @rooftop.name.capitalize %> Location 📍 </h2>
-      <br>
-      <div
-      id="map"
-      style="width: 100%;
-      height: 600px;
-      border-radius: 6px;"
-      data-markers="<%= @marker.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
-      <br><br>
+      <div class="container wrapper" style="background-color: #F4F4F4; padding: 0 40px;">
+        <br>
+        <h2 class="text-center" class="presentation-line" > <%= @rooftop.name.capitalize %> Location 📍 </h2>
+        <br>
+        <div
+        id="map"
+        style="width: 100%;
+        height: 600px;
+        border-radius: 6px;"
+        data-markers="<%= @marker.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+        <br><br>
+      </div>
     </div>
-  </div>
 

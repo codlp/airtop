@@ -1,6 +1,7 @@
 .show-container {
   display: flex;
   justify-content: space-between;
+  align-items: inherit;
 }
 
 .rooftop-presentation {
@@ -18,6 +19,7 @@
   background-color: white;
   padding: 20px;
   padding-bottom: 50px;
+  min-width: 50vw;
 }
 
 .form-wrapper {
@@ -28,4 +30,9 @@
 color: white;
 text-align: center;
 vertical-align: middle;
+}
+
+.show-booking {
+  display: flex;
+  justify-content: space-between;
 }
