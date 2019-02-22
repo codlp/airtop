@@ -8,14 +8,16 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
+    <% @user = current_user %>
       <!-- Links when logged in -->
       <%= link_to "My reservations", user_reservations_path(@user), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My rooftops", user_rooftops_path(@user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "#{@user.first_name}", user_path(@user), class: "navbar-wagon-item navbar-wagon-link", style: "font-weight: bold" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
         <i class="dropdown-toggle" data-toggle="dropdown">
-          <% @user = current_user %>
+
           <% if @user.photo.present? %>
           <div class="image">
             <%= cl_image_tag @user.photo, height: 30, width:30, crop: :fill%>

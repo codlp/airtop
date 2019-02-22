@@ -74,7 +74,7 @@
               <div class="card-bottom text-center">
                 <h2><%= rooftop.name.upcase %></h2>
                 <h5 class="card-trip-pricing"><%= link_to " See it ", rooftop_path(rooftop), class: "btn btn-flat-card-book"%> <div class="link">Price: <%= rooftop.price_per_hour %> € </div></h5>
-                <img src='https://d1qb2nb5cznatu.cloudfront.net/users/3459455-large?1516069194' class="card-trip-user avatar-bordered"/>
+            <%= cl_image_tag rooftop.user.photo, height: 40, width: 40, crop: :fill, class: "card-trip-user avatar-bordered" %>
               </div>
             </div>
           </div>
