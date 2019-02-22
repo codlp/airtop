@@ -17,11 +17,10 @@
           <p><%= reservation.rooftop.address %></p>
         </div>
         <% if reservation.messages.present? %>
-        <%= link_to "See messages", new_reservation_message_path(reservation), class: "btn medium-btn", style: "background-color: #66aee9" %>
+        <%= link_to "See messages", reservation_messages_path(reservation), class: "btn medium-btn", style: "background-color: #66aee9" %>
         <% else %>
         <%= link_to "New message", new_reservation_message_path(reservation), class: "btn medium-btn", style: "background-color: #66aee9" %>
         <% end %>
-
 
         <div class="message-status">
           <% if reservation.status == "Pending" %>
@@ -35,7 +34,6 @@
         </div>
       </div>
       <% end %>
-
     </div>
   </div>
 </div>
