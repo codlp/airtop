@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   devise_for :users
   root to: "rooftops#index"
+  resources :users, only: [:show, :edit, :update]
   resources :rooftops do
     resources :reservations, only: [:new, :create]
   end
