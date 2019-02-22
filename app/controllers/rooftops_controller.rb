@@ -29,7 +29,6 @@ class RooftopsController < ApplicationController
         lat: @rooftop.latitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { rooftop: @rooftop })
       }
-      # raise
   end
 
   def new
