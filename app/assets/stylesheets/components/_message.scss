@@ -5,6 +5,13 @@
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
 
+.msgbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .messages-header {
   display: flex;
   justify-content: space-between;
@@ -70,7 +77,12 @@
 }
 
 .message-content {
-  font-size: 20px
+  font-size: 20px;
+  border: solid 1px lightgrey;
+  border-radius: 5px;
+  padding: 25px;
+  width: 75vw;
+  margin-right: 30px;
 }
 
 .message-right {

@@ -1,13 +1,13 @@
 <div class="container">
-<div class="messages-header">
-  <h1 class="messages-header text-center presentation-line"> My messages </h1>
-  <%= link_to "New message", new_reservation_message_path, class: "btn medium-btn", style: "background-color: #3945C3" %></div>
+  <div class="messages-header">
+    <h1 class="messages-header text-center presentation-line"> My messages </h1>
+    <%= link_to "New message", new_reservation_message_path, class: "btn medium-btn", style: "background-color: #3945C3" %></div>
   </div>
   <div class="wrapper">
     <div class="container">
-    <br><br>
-  <% @reservation.messages.each do |message| %>
-    <% if current_user != @reservation.rooftop.user %>
+      <br><br>
+      <% @reservation.messages.each do |message| %>
+      <% if current_user != @reservation.rooftop.user %>
       <div class="message">
         <%= cl_image_tag @reservation.rooftop.user.photo, class:"avatar"%>
         <div class="message-body">
@@ -19,30 +19,37 @@
               <p><%= message.content %></p>
             </div>
             <%= link_to reservation_message_path(@reservation, message), method: :delete, data: {confirm: "Are you sure?"} do %>
-                <i class="fas fa-trash-alt"></i>
+            <i class="fas fa-trash-alt"></i>
             <% end %>
           </div>
         </div>
       </div>
 
-    <% else %>
+      <% else %>
       <div class="message">
         <div class="message-body">
-          <div class="container darker">
+          <div class="container">
             <strong> <%= @reservation.user.first_name.upcase %> </strong>
             <strong> <%= @reservation.user.last_name.upcase %></strong>
             for <strong><%= @reservation.rooftop.name.upcase %></strong>
-            <div class="message-content">
-              <p><%= message.content %></p>
-            </div>
-            <%= cl_image_tag @reservation.rooftop.user.photo, class:"avatar"%>
-            <%= link_to reservation_message_path(@reservation, message), method: :delete, data: {confirm: "Are you sure?"} do %>
+            <div class="msgbox">
+              <div class="message-image">
+                <%= cl_image_tag @reservation.rooftop.user.photo, class:"avatar"%>
+              </div>
+              <div class="message-content">
+                <p><%= message.content %></p>
+              </div>
+              <div class="delete">
+                <%= link_to reservation_message_path(@reservation, message), method: :delete, data: {confirm: "Are you sure?"} do %>
                 <i class="fas fa-trash-alt"></i>
-            <% end %>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
+        <% end %>
+        <% end %>
       </div>
-    <% end %>
-  <% end %>
-</div>
+    </div>
+  </div>
 </div>
