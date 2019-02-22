@@ -18,7 +18,6 @@ class RooftopsController < ApplicationController
     end
     @rooftops_search = Rooftop.search_by_name_and_address(params[:query])
   end
-
   def show
     @rooftop = Rooftop.find(params[:id])
     @reservation = Reservation.new
