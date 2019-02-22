@@ -1,8 +1,11 @@
 <div class="container">
 <div class="messages-header">
-  <h1 class="text-center presentation-line"> My messages </h1>
+  <h1 class="messages-header text-center presentation-line"> My messages </h1>
   <%= link_to "New message", new_reservation_message_path, class: "btn medium-btn", style: "background-color: #3945C3" %></div>
-
+  </div>
+  <div class="wrapper">
+    <div class="container">
+    <br><br>
   <% @reservation.messages.each do |message| %>
       <div class="message">
         <% if @reservation.user == @reservation.rooftop.user %>
@@ -27,4 +30,5 @@
 
 
   <% end %>
+</div>
 </div>
