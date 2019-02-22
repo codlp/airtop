@@ -5,14 +5,14 @@
   </div>
   <div class="wrapper">
     <div class="container">
-    <br><br>
-  <% @reservation.messages.each do |message| %>
+      <br><br>
+      <% @reservation.messages.each do |message| %>
       <div class="message">
         <div class="message-body">
           <div class="container">
             <strong> <%= @reservation.user.first_name.upcase %> </strong>
-            <strong> <%= @reservation.user.last_name.upcase %></strong>
-            for <strong><%= @reservation.rooftop.name.upcase %></strong>
+            <strong> <%= @reservation.user.last_name.upcase %></strong> for
+            <strong><%= @reservation.rooftop.name.upcase %></strong>
             <div class="msgbox">
               <div class="message-image">
                 <%= cl_image_tag current_user.photo, class:"avatar"%>
@@ -27,9 +27,10 @@
               </div>
             </div>
           </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
   </div>
 </div>
+
