@@ -5,11 +5,14 @@
   </div>
   <div class="wrapper">
     <div class="container">
-      <br><br>
-      <% @reservation.messages.each do |message| %>
-      <% if current_user != @reservation.rooftop.user %>
+    <br><br>
+  <% @reservation.messages.each do |message| %>
       <div class="message">
-        <%= cl_image_tag @reservation.rooftop.user.photo, class:"avatar"%>
+        <% if @reservation.user == @reservation.rooftop.user %>
+          <%= cl_image_tag @reservation.rooftop.user.photo, class:"avatar"%>
+        <% else %>
+          <%= cl_image_tag @reservation.user.photo, class:"avatar", id:"right"%>
+        <% end %>
         <div class="message-body">
           <div class="container">
             <strong> <%= @reservation.user.first_name.upcase %> </strong>
@@ -24,7 +27,6 @@
           </div>
         </div>
       </div>
-
       <% else %>
       <div class="message">
         <div class="message-body">

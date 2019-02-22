@@ -7,24 +7,28 @@
       <span id="banner-typed-text"></span>
     </h1>
     <br><br>
+
     <!-- Search bar -->
-    <div class="around-search">
-      <div class="search">
-        <%= form_tag rooftops_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "search-bar form-control",
-          placeholder: "Search for a city, an address, or a particular rooftop"
-          %>
-      <div class="wrap">
-      <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
-      </button>
-      </div>
-          <% end %>
+
+      <div class="around-search">
+        <div class="search">
+          <%= form_tag rooftops_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "search-bar form-control",
+            placeholder: "Search for a city, an address, or a particular rooftop"
+            %>
+        <div class="wrap">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
         </div>
-      </div>
+            <% end %>
+          </div>
+        </div>
+
       <!-- End of search bar -->
+
     </div>
   </div>
 
@@ -44,7 +48,7 @@
               <% end %>
               <div class="card-bottom">
                 <h2><%= rooftop.name.upcase %></h2>
-                <h5 class="card-trip-pricing"><%= link_to " See it ", rooftop_path(rooftop), class: "btn btn-flat-card-book"%> <div class="link">Price: <%= rooftop.price_per_hour %> € </div></h5>
+                <h5 class="card-trip-pricing"><%= link_to "See it", rooftop_path(rooftop), class: "btn btn-flat-card-book"%> <div class="link">Price: <%= rooftop.price_per_hour %> € </div></h5>
                 <img src='https://d1qb2nb5cznatu.cloudfront.net/users/3459455-large?1516069194' class="card-trip-user avatar-bordered"/>
               </div>
             </div>
@@ -61,7 +65,7 @@
   <!-- Index of rooftops -->
   <% if @rooftops_search.present? == false %>
   <div class="container">
-    <h1 class="text-center" classe="presentation-line">All our amazing rooftops</h1>
+    <h1 class="text-center presentation-line">All our amazing rooftops</h1>
     <div class="row">
       <% @rooftops.each do |rooftop| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -90,7 +94,7 @@
   <!-- MAP -->
   <div class="wrapper" style="background-color: AliceBlue">
     <div class="container">
-      <h2 class="text-center" class="presentation-line">Locate our amazing rooftops</h2>
+      <h2 class="text-center presentation-line">Locate our amazing rooftops</h2>
       <br>
       <div
       id="map"
