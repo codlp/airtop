@@ -4,6 +4,13 @@
   padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
+
+.messages-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  align-items: baseline;
+}
 .message:last-child {
   border-bottom: none;
 }

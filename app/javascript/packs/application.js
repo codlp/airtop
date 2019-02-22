@@ -27,6 +27,7 @@ initMapbox();
 loadDynamicBannerText();
 initAutocomplete();
 previewImageOnFileSelect();
+initSweetalert();
 // initSweetalert('#sweet-alert-green', {
 //   title: "A nice alert",
 //   text: "This is a great alert, isn't it?",

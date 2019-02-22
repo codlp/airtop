@@ -1,6 +1,7 @@
 <div class="container">
-
-  <h1 class="text-center presentation-line"> My messages <%= link_to "New message", new_reservation_message_path, class: "btn medium-btn", style: "background-color: #3945C3" %></h1>
+<div class="messages-header">
+  <h1 class="text-center presentation-line"> My messages </h1>
+  <%= link_to "New message", new_reservation_message_path, class: "btn medium-btn", style: "background-color: #3945C3" %></div>
 
   <% @reservation.messages.each do |message| %>
     <% if current_user != @reservation.rooftop.user %>

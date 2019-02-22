@@ -3,10 +3,13 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :new, :destroy, :accept, :decline]
 
   def index
+    @rooftops = Rooftop.all
     @reservations = policy_scope(reservation).order(created_at: :desc)
   end
 
   def show
+    @rooftop = Rooftop.find(params[:rooftop_id])
+    @reservation = Reservation.find(params[:id])
   end
 
   def new

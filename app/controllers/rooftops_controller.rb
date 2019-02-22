@@ -22,6 +22,13 @@ class RooftopsController < ApplicationController
   def show
     @rooftop = Rooftop.find(params[:id])
     @reservation = Reservation.new
+
+    @marker =
+      {
+        lng: @rooftop.longitude,
+        lat: @rooftop.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { rooftop: @rooftop })
+      }
   end
 
   def new

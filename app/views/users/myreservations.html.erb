@@ -1,7 +1,11 @@
-<div class="container">
-
-  <h1 class="text-center presentation-line"> All my reservations <%= link_to "Book again", rooftops_path, class: 'btn-flat-book-little' %></h1>
-
+<div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1459219497165-4f01989c7d85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1732&q=80);">
+  <div class="container">
+    <br><br>
+    <h1 class="text-center presentation-banner-text"> All my reservations</h1><br><br>
+</div>
+  <div class="wrapper" style="background-color: white">
+    <div class="container">
+<br>
   <% @user.reservations.each do |reservation| %>
     <div class="message">
       <%= link_to rooftop_path(reservation) do %>
@@ -12,8 +16,12 @@
         <p><strong>Address: <%= reservation.rooftop.address %></strong></p>
         <p><%= reservation.rooftop.description %></p>
       </div>
+      <% if reservation.messages.present? %>
+              <%= link_to "See messages", new_reservation_message_path(reservation), class: "btn medium-btn", style: "background-color: #66aee9" %>
+        <% else %>
+              <%= link_to "New message", new_reservation_message_path(reservation), class: "btn medium-btn", style: "background-color: #66aee9" %>
+      <% end %>
 
-      <%= link_to "Messages", new_reservation_message_path(reservation), class: "btn medium-btn", style: "background-color: #1fdc89" %>
 
       <div class="message-status">
         <% if reservation.status == "Pending" %>
@@ -27,4 +35,6 @@
       </div>
     </div>
   <% end %>
+
+</div>
 </div>
