@@ -1,4 +1,3 @@
-
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:myrooftops, :myreservations, :reservations]
 
@@ -18,7 +17,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
     redirect_to user_path(@user)
     else
-      render '/edit'
+      render 'users/show'
     end
   end
 
