@@ -1,7 +1,10 @@
 <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1459219497165-4f01989c7d85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1732&q=80);">
   <div class="container">
     <br>
-    <h1 class="text-center presentation-line presentation-banner-text"> My Rooftops' Dashboard <%= link_to "Post a new rooftop", new_rooftop_path(@rooftop), class: 'btn-flat-book-little', style: "padding: 15px" %></h1>
+    <div class="flexbox">
+      <h1 class="text-center presentation-banner-text">My Rooftops' Dashboard</h1>
+      <%= link_to "Post a new rooftop", new_rooftop_path(@rooftop), class: 'btn-flat-book-little', style: "padding: 15px" %>
+    </div>
     <div class="tabs">
       <a class="tab" href="/myrooftops">
         <h3>My rooftops</h3>
