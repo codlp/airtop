@@ -9,10 +9,15 @@
 
 /* Form Layout */
 .form-wrapper {
-  margin: 3em auto;
-  padding: 30px;
-  max-width: 500px;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
 }
+
+.form-wrapper h2 {
+    padding-left: 30px;
+}
+
 
 .form-post-wrapper {
   background: #fafafa;
