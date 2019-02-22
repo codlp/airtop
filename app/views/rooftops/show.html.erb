@@ -49,3 +49,20 @@
     </div>
     <% end %>
 
+      <div class="wrapper" style="background-color: AliceBlue ">
+    <div class="container">
+      <h2 class="text-center" class="presentation-line" style="font-family: fantasy;
+" > <%= @rooftop.name.capitalize %></h2>
+      <br>
+      <div
+      id="map"
+      style="width: 100%;
+      height: 600px;
+      border-radius: 6px;"
+      data-markers="<%= @marker.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+      <br><br>
+    </div>
+  </div>
+
