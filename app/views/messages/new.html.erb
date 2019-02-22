@@ -1,11 +1,16 @@
-<div class="container" >
-  <div class="messages-header">
-  <h1>New message</h1>
-  <%= link_to "All messages", reservation_messages_path(@reservation), class: "btn medium-btn", style: "background-color: #1fdc89" %>
+<div class="container">
+<div class="messages-header">
+  <h1 class="messages-header text-center presentation-line"> New message to <%= @reservation.rooftop.user.first_name %></h1>
+    <%= link_to "All messages", reservation_messages_path(@reservation), class: "btn medium-btn", style: "background-color: #1fdc89" %>
+  </div>
 </div>
-  <%= simple_form_for [@reservation, @message] do |f| %>
-    <%= f.input :content %>
-    <%= f.submit "add a message", class: "btn btn-primary" %>
-  <% end %>
+  <div class="wrapper">
+    <div class="container">
+    <br><br>
+      <%= simple_form_for [@reservation, @message] do |f| %>
+      <%= f.input :content %>
+      <%= f.submit "Add a message", class: 'btn btn-flat-card-book' %>
+      <% end %>
+    </div>
+  </div>
 
-</div>
