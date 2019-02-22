@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
     redirect_to user_path(@user)
     else
-      render '/edit'
+      render 'users/show'
     end
   end
 

@@ -1,7 +1,11 @@
 <div class="container" >
-  <h1>New message <%= link_to "All messages", reservation_messages_path(@reservation), class: "btn medium-btn", style: "background-color: #1fdc89" %></h1>
+  <div class="messages-header">
+  <h1>New message</h1>
+  <%= link_to "All messages", reservation_messages_path(@reservation), class: "btn medium-btn", style: "background-color: #1fdc89" %>
+</div>
   <%= simple_form_for [@reservation, @message] do |f| %>
     <%= f.input :content %>
     <%= f.submit "add a message", class: "btn btn-primary" %>
   <% end %>
+
 </div>
