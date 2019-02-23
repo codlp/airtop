@@ -15,6 +15,12 @@
   flex-direction: row;
   height: max-content;
   padding: 10px;
+  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.08), 0px 20px 31px 3px rgba(0, 0, 0, 0.09), 0px 8px 20px 7px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-direction: column;
+  min-width: 30vw;
 }
 
 .pricing-plan {
